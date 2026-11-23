@@ -1013,6 +1013,10 @@ Nenhuma mudança em código de medição nem em dados.
 
 Permanece pendente só a nota do orientador (formação, titulação e e-mail), que o autor preencherá.
 
+### E54 — 23/11 · Nota de rodapé do orientador
+
+Nota do orientador preenchida com os dados que ele forneceu: graduações, especializações, MBA, mestrado em andamento (UFPI) e e-mail institucional. Segue o formato do `main.pdf` (formação, depois e-mail). Instituição e ano das graduações e especializações não foram informados, então não aparecem. Saem as marcações "(pendente)". O PDF tem 58 páginas.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
