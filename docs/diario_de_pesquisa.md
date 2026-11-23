@@ -1017,6 +1017,8 @@ Permanece pendente só a nota do orientador (formação, titulação e e-mail), 
 
 Nota do orientador preenchida com os dados que ele forneceu: graduações, especializações, MBA, mestrado em andamento (UFPI) e e-mail institucional. Segue o formato do `main.pdf` (formação, depois e-mail). Instituição e ano das graduações e especializações não foram informados, então não aparecem. Saem as marcações "(pendente)". O PDF tem 58 páginas.
 
+Revisto no mesmo dia: o orientador pediu só "Esp. Keoma de Sousa Coelho" na linha de autoria, sem nota de rodapé. A nota foi retirada, e o artigo fica com uma única nota, a do autor.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
