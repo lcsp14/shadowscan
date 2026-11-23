@@ -1002,6 +1002,17 @@ Pedido do orientador: corrigir os pontos abaixo, sem nova bateria de experimento
 
 Nenhuma mudança em código de medição nem em dados.
 
+### E53 — 23/11 · Remissão de todas as tabelas no corpo e data da declaração de IA
+
+1. **Tabelas 2 a 18 sem remissão no corpo.** A falha já estava registrada em E45 (20/11): só a Tabela 1 era chamada no texto, e a ABNT pede que toda tabela seja referida. Não foi apontada pelo orientador; entra no pedido geral dele de corrigir "inconsistências do texto e apresentação dos resultados". Cada tabela recebeu remissão:
+   - **Frase de abertura** nas seções que começavam direto pela tabela: 3.5 (Tabela 2), 6.3 (Tabela 6), 7.2 (Tabelas 8 e 9), 7.3 (10 e 11), 7.4 (12 e 13), 7.6 (16) e 7.7 (17 e 18).
+   - **Remissão no parágrafo que anuncia a tabela:** Tabelas 3, 4, 5, 7, 14 e 15.
+
+   **Verificação:** script confirma que as 18 tabelas são chamadas no corpo. Nenhum número mudou.
+2. **Data da declaração de IA:** "17 de novembro" passou a "23 de novembro de 2026", data da versão final.
+
+Permanece pendente só a nota do orientador (formação, titulação e e-mail), que o autor preencherá.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
