@@ -994,6 +994,7 @@ Pedido do orientador: corrigir os pontos abaixo, sem nova bateria de experimento
    - **README:** reescrito com o conteúdo do repositório e os passos de reprodução (VAmPI por digest; vAPI pelo commit + override).
    - **Artigo:** Seção 6.5 nova, com o conteúdo e o modo de recalcular as tabelas sem tocar nos alvos. O URL fica como marcador até o repositório ser criado.
    - **Testes:** 19/19 OK.
+   - **Publicado:** https://github.com/lcsp14/shadowscan (público, branch `main`, commit `454c6e7`, 214 arquivos). Os commits usam o e-mail *noreply* do GitHub (`user.email` configurado só neste repositório), a pedido do autor, para não expor o e-mail pessoal. O URL entrou na Seção 6.5.
 6. **Alcance das conclusões.**
    - **QP1 (Seções 8.1 e 9) e objetivo 3:** "precisão 1,00" passou a "precisão ajustada", com a explicação de que significa ausência de FP ajustados, e não detecção completa.
    - **Seção 8.2:** "a etapa diferencial não é redundante com as ferramentas existentes" virou argumento analítico explícito: nenhuma outra ferramenta foi executada nos mesmos alvos.
