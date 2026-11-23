@@ -1,0 +1,21 @@
+{
+  "n": 3,
+  "seed": 4,
+  "removidos": [
+    {
+      "method": "GET",
+      "path": "/vapi/api3/comment",
+      "tipo": "metodo"
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api5/users",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api7/user/key",
+      "tipo": "caminho"
+    }
+  ]
+}

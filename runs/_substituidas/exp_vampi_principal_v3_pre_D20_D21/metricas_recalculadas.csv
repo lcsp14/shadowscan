@@ -1,0 +1,5 @@
+execucao,n,seed,auth,precisao,revocacao,f1,vp,fp,fn,precisao_bruta,f1_bruto,fp_bruto,gt_total,gt_descobertos,gt_diferencial_ok,rev_descoberta,rev_diferencial,precisao_caminho,revocacao_caminho,f1_caminho,gt_caminho,vp_caminho,gt_metodo,vp_metodo,requisicoes,erros,segundos,fn_lista,fp_lista,fn_nao_descobertos,fn_diferencial
+n3_s1_auth-nao,3,1,nao,1.0,1.0,1.0,3,0,0,0.3333,0.5,6,3,3,3,1.0,1.0,1.0,1.0,1.0,3,3,0,0,46317,0,276.57,[],[],[],[]
+n3_s2_auth-nao,3,2,nao,1.0,0.6667,0.8,2,0,1,0.25,0.3636,6,3,2,2,0.6666666666666666,1.0,1.0,0.6667,0.8,2,1,1,1,46297,0,273.17,['PUT /users/v1/{}/password'],[],['PUT /users/v1/{}/password'],[]
+n3_s3_auth-nao,3,3,nao,1.0,1.0,1.0,3,0,0,0.3333,0.5,6,3,3,3,1.0,1.0,1.0,1.0,1.0,3,3,0,0,33150,0,196.5,[],[],[],[]
+n3_s4_auth-nao,3,4,nao,1.0,0.6667,0.8,2,0,1,0.25,0.3636,6,3,2,2,0.6666666666666666,1.0,1.0,0.6667,0.8,2,1,1,1,33135,0,195.2,['GET /createdb'],[],['GET /createdb'],[]

@@ -1,0 +1,11 @@
+alvo,n,seed,auth,vp,fp,fn,precisao,revocacao,f1,fp_bruto,precisao_bruta,gt_caminho,vp_caminho,gt_metodo,vp_metodo,zombies,requisicoes,erros,segundos,fn_lista,fp_lista
+vampi,3,1,nao,3,0,0,1.0,1.0,1.0,6,0.3333,3,3,0,0,0,46317,0,276.57,,
+vampi,3,2,nao,2,0,1,1.0,0.6667,0.8,6,0.25,2,1,1,1,0,46297,0,273.17,PUT /users/v1/{}/password,
+vampi,3,3,nao,3,0,0,1.0,1.0,1.0,6,0.3333,3,3,0,0,0,33150,0,196.5,,
+vampi,3,4,nao,2,0,1,1.0,0.6667,0.8,6,0.25,2,1,1,1,0,33135,0,195.2,GET /createdb,
+vampi,3,5,nao,2,2,1,0.5,0.6667,0.5714,8,0.2,2,1,1,1,0,46289,0,275.9,GET /createdb,GET /users/v1/message; GET /users/v1/status
+vampi,6,1,nao,4,3,2,0.5714,0.6667,0.6154,9,0.3077,5,3,1,1,0,46285,0,281.94,GET /createdb; GET /users/v1/_debug,GET /users/v1/admin; GET /users/v1/message; GET /users/v1/status
+vampi,6,2,nao,5,3,1,0.625,0.8333,0.7143,9,0.3571,5,4,1,1,0,46310,0,284.56,PUT /users/v1/{}/password,GET /users/v1/admin; GET /users/v1/message; GET /users/v1/status
+vampi,6,3,nao,5,0,1,1.0,0.8333,0.9091,6,0.4545,5,4,1,1,0,33133,0,207.75,GET /users/v1/_debug,
+vampi,6,4,nao,1,0,5,1.0,0.1667,0.2857,6,0.1429,6,1,0,0,0,26519,0,160.46,GET /books/v1; GET /books/v1/{}; GET /createdb; GET /users/v1/_debug; POST /books/v1,
+vampi,6,5,nao,5,3,1,0.625,0.8333,0.7143,9,0.3571,5,4,1,1,0,46302,0,277.43,GET /createdb,GET /users/v1/admin; GET /users/v1/message; GET /users/v1/status

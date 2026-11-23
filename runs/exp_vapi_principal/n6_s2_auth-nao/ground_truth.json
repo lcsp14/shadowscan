@@ -1,0 +1,36 @@
+{
+  "n": 6,
+  "seed": 2,
+  "removidos": [
+    {
+      "method": "PUT",
+      "path": "/vapi/api1/user/{id}",
+      "tipo": "metodo"
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api10/user/flag",
+      "tipo": "caminho"
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api2/user/login",
+      "tipo": "caminho"
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api4/otp/verify",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/dashboard/flag",
+      "tipo": "caminho"
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/stickynotes",
+      "tipo": "metodo"
+    }
+  ]
+}

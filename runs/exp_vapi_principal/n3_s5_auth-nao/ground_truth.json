@@ -1,0 +1,21 @@
+{
+  "n": 3,
+  "seed": 5,
+  "removidos": [
+    {
+      "method": "GET",
+      "path": "/vapi/api1/user/{id}",
+      "tipo": "metodo"
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api6/user",
+      "tipo": "caminho"
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api8/user/login",
+      "tipo": "caminho"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+alvo,n,seed,auth,vp,fp,fn,precisao,revocacao,f1,fp_bruto,precisao_bruta,gt_caminho,vp_caminho,gt_metodo,vp_metodo,zombies,requisicoes,erros,renovacoes_auth,segundos,fn_lista,fp_lista
+vapi,3,1,nao,3,7,0,0.3,1.0,0.4615,7,0.3,3,3,0,0,2,191390,13,0,3124.4,,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico
+vapi,3,2,nao,2,7,1,0.2222,0.6667,0.3333,7,0.2222,3,2,0,0,2,178207,0,0,2284.66,GET /vapi/api10/user/flag,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico
+vapi,3,3,nao,3,7,0,0.3,1.0,0.4615,7,0.3,3,3,0,0,2,191390,9,0,4118.64,,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico
+vapi,3,4,nao,3,7,0,0.3,1.0,0.4615,7,0.3,2,2,1,1,2,191390,0,0,2328.85,,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico
+vapi,3,5,nao,3,7,0,0.3,1.0,0.4615,7,0.3,2,2,1,1,2,191390,17,0,4155.99,,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico
+vapi,6,1,nao,4,7,2,0.3636,0.6667,0.4706,7,0.3636,6,4,0,0,1,178194,0,0,2082.02,GET /vapi/api10/user/flag; GET /vapi/user,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico
+vapi,6,2,nao,3,7,3,0.3,0.5,0.375,7,0.3,4,1,2,2,2,165007,0,0,1926.78,GET /vapi/api10/user/flag; GET /vapi/dashboard/flag; POST /vapi/api4/otp/verify,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico
+vapi,6,3,nao,3,7,3,0.3,0.5,0.375,7,0.3,6,3,0,0,1,184763,0,0,2178.1,GET /vapi/serversurfer; GET /vapi/user; POST /vapi/api4/otp/verify,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico
+vapi,6,4,nao,4,7,2,0.3636,0.6667,0.4706,7,0.3636,6,4,0,0,1,178194,0,0,2124.57,GET /vapi/api10/user/flag; GET /vapi/user,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico
+vapi,6,5,nao,3,7,3,0.3,0.5,0.375,7,0.3,5,2,1,1,2,158429,0,0,1888.31,GET /vapi/api8/user/secret; GET /vapi/dashboard/flag; POST /vapi/api8/user/login,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico

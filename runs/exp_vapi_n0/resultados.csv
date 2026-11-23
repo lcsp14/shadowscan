@@ -1,0 +1,2 @@
+alvo,n,seed,auth,vp,fp,fn,precisao,revocacao,f1,fp_bruto,precisao_bruta,gt_caminho,vp_caminho,gt_metodo,vp_metodo,zombies,requisicoes,erros,renovacoes_auth,segundos,fn_lista,fp_lista
+vapi,0,1,nao,0,7,0,0.0,0.0,0.0,7,0.0,0,0,0,0,2,191390,0,0,2214.97,,DELETE /favicon.ico; GET /; GET /favicon.ico; GET /vapi; PATCH /favicon.ico; POST /favicon.ico; PUT /favicon.ico

@@ -1,0 +1,21 @@
+# Override local (TCC). Nenhuma alteração no código da aplicação; só infraestrutura de execução.
+# Registro: docs/diario_de_pesquisa.md (E16 e E30) e docs/ambiente_experimental.md §5.
+services:
+  db:
+    # E16: não publica a 3306 no host. O "www" acessa o banco pela rede interna
+    # (DB_HOST=db); a publicação conflitava com outro MySQL da máquina.
+    ports: !reset []
+
+  www:
+    # E30: o compose original monta o código a partir do disco do Windows
+    # (./vapi:/var/www/html/vapi). No Docker Desktop/Windows essa montagem é muito lenta
+    # (~2,2 s por requisição, com o servidor atendendo uma por vez), o que tornava a
+    # bateria inviável (~28 h por execução). A imagem já contém o MESMO código
+    # (Dockerfile: COPY ./vapi /var/www/html/vapi), então a montagem é removida.
+    volumes: !reset []
+    # Sem a montagem, passa a valer o cache de configuração gerado no build
+    # (Dockerfile: artisan config:cache, sem as variáveis de ambiente, ou seja, DB_HOST
+    # padrão). config:clear faz o Laravel ler as variáveis do compose, como antes.
+    # PHP_CLI_SERVER_WORKERS (PHP >= 7.4): o servidor embutido atende requisições
+    # em paralelo, em vez de uma por vez.
+    command: ["sh", "-c", "php /var/www/html/vapi/artisan config:clear && PHP_CLI_SERVER_WORKERS=10 php /var/www/html/vapi/artisan serve --host=0.0.0.0"]

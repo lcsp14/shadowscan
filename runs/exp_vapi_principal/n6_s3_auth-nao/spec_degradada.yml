@@ -1,0 +1,139 @@
+openapi: 3.0.0
+info:
+  title: vAPI
+  version: '1.0'
+  description: Gerada de routes/api.php
+servers:
+- url: /vapi
+paths:
+  /api1/user:
+    post:
+      responses:
+        '200':
+          description: ok
+  /api1/user/{id}:
+    get:
+      responses:
+        '200':
+          description: ok
+    put:
+      responses:
+        '200':
+          description: ok
+  /api10/user/flag:
+    get:
+      responses:
+        '200':
+          description: ok
+  /api2/user/details:
+    get:
+      responses:
+        '200':
+          description: ok
+  /api2/user/login:
+    post:
+      responses:
+        '200':
+          description: ok
+  /api3/comment:
+    get:
+      responses:
+        '200':
+          description: ok
+    post:
+      responses:
+        '200':
+          description: ok
+  /api3/user/login:
+    post:
+      responses:
+        '200':
+          description: ok
+  /api4/login:
+    post:
+      responses:
+        '200':
+          description: ok
+  /api4/user:
+    get:
+      responses:
+        '200':
+          description: ok
+  /api5/user:
+    post:
+      responses:
+        '200':
+          description: ok
+  /api5/user/{id}:
+    get:
+      responses:
+        '200':
+          description: ok
+  /api6/user:
+    post:
+      responses:
+        '200':
+          description: ok
+  /api6/user/me:
+    get:
+      responses:
+        '200':
+          description: ok
+  /api7/user:
+    post:
+      responses:
+        '200':
+          description: ok
+  /api7/user/login:
+    get:
+      responses:
+        '200':
+          description: ok
+  /api7/user/logout:
+    get:
+      responses:
+        '200':
+          description: ok
+  /api8/user/login:
+    post:
+      responses:
+        '200':
+          description: ok
+  /api8/user/secret:
+    get:
+      responses:
+        '200':
+          description: ok
+  /api9/v1/user/login:
+    post:
+      responses:
+        '200':
+          description: ok
+  /api9/v2/user/login:
+    post:
+      responses:
+        '200':
+          description: ok
+  /dashboard/flag:
+    get:
+      responses:
+        '200':
+          description: ok
+  /jwt/user:
+    post:
+      responses:
+        '200':
+          description: ok
+    get:
+      responses:
+        '200':
+          description: ok
+  /stickynotes:
+    post:
+      responses:
+        '200':
+          description: ok
+    get:
+      responses:
+        '200':
+          description: ok

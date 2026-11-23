@@ -1,0 +1,300 @@
+{
+  "config": {
+    "url": "http://127.0.0.1:5000",
+    "spec": "runs\\exp_vampi_n0\\n0_s1_auth-nao\\spec_degradada.yml",
+    "wordlists": [
+      "C:\\dev\\TCC\\wordlists\\seclists_objects.txt",
+      "C:\\dev\\TCC\\wordlists\\seclists_actions.txt"
+    ],
+    "n_palavras": 3291,
+    "metodos": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+    "metodos_fase_a": [
+      "GET",
+      "POST"
+    ],
+    "concorrencia": 10,
+    "template_policy": "declarado",
+    "param_value": "1",
+    "limiar_similaridade": 0.9,
+    "autenticado": false,
+    "renovacao_auth_s": null
+  },
+  "execucao": {
+    "requisicoes": 46291,
+    "erros": 0,
+    "renovacoes_auth": 0,
+    "caminhos_vivos": 15,
+    "segundos": 266.78
+  },
+  "n_declarados": 14,
+  "shadow": [
+    {
+      "method": "DELETE",
+      "path": "/console",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "GET",
+      "path": "/console",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "PATCH",
+      "path": "/console",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "POST",
+      "path": "/console",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "PUT",
+      "path": "/console",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "GET",
+      "path": "/ui",
+      "origem": "wordlist",
+      "status": 308,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    }
+  ],
+  "zombie": [],
+  "ambiguos": [
+    {
+      "method": "GET",
+      "path": "/users/v1/admin",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": "/users/v1/{username}",
+      "categoria": ""
+    }
+  ],
+  "observados": [
+    {
+      "method": "GET",
+      "path": "/",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/books/v1",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/books/v1",
+      "template": null,
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/books/v1/1",
+      "template": "/books/v1/{book_title}",
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/books/v1/{param}",
+      "template": "/books/v1/{param}",
+      "origem": "coringa",
+      "status": 401
+    },
+    {
+      "method": "DELETE",
+      "path": "/console",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/console",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "PATCH",
+      "path": "/console",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/console",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/console",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/createdb",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "template": null,
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/ui",
+      "template": null,
+      "origem": "wordlist",
+      "status": 308
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/users/v1/1",
+      "template": "/users/v1/{username}",
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/1",
+      "template": "/users/v1/{username}",
+      "origem": "declarado",
+      "status": 404
+    },
+    {
+      "method": "PUT",
+      "path": "/users/v1/1/email",
+      "template": "/users/v1/{username}/email",
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "PUT",
+      "path": "/users/v1/1/password",
+      "template": "/users/v1/{username}/password",
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/_debug",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/admin",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/users/v1/login",
+      "template": null,
+      "origem": "declarado",
+      "status": 400
+    },
+    {
+      "method": "POST",
+      "path": "/users/v1/register",
+      "template": null,
+      "origem": "declarado",
+      "status": 400
+    },
+    {
+      "method": "DELETE",
+      "path": "/users/v1/{param}",
+      "template": "/users/v1/{param}",
+      "origem": "coringa",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/{param}",
+      "template": "/users/v1/{param}",
+      "origem": "coringa",
+      "status": 404
+    }
+  ],
+  "metricas_brutas": {
+    "intrinsecos_excluidos": 0,
+    "vp": 0,
+    "fp": 6,
+    "fn": 0,
+    "precisao": 0.0,
+    "revocacao": 0.0,
+    "f1": 0.0,
+    "revocacao_por_tipo": {},
+    "lista_vp": [],
+    "lista_fp": [
+      "DELETE /console",
+      "GET /console",
+      "GET /ui",
+      "PATCH /console",
+      "POST /console",
+      "PUT /console"
+    ],
+    "lista_fn": []
+  },
+  "metricas": {
+    "intrinsecos_excluidos": 6,
+    "vp": 0,
+    "fp": 0,
+    "fn": 0,
+    "precisao": 0.0,
+    "revocacao": 0.0,
+    "f1": 0.0,
+    "revocacao_por_tipo": {},
+    "lista_vp": [],
+    "lista_fp": [],
+    "lista_fn": []
+  }
+}

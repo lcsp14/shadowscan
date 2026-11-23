@@ -1,0 +1,28 @@
+{
+  "spec_original": "specs\\vampi_openapi3.yml",
+  "n": 4,
+  "seed": 1,
+  "exclude": [],
+  "removidos": [
+    {
+      "method": "GET",
+      "path": "/books/v1",
+      "tipo": "caminho"
+    },
+    {
+      "method": "POST",
+      "path": "/books/v1",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/createdb",
+      "tipo": "caminho"
+    },
+    {
+      "method": "POST",
+      "path": "/users/v1/register",
+      "tipo": "caminho"
+    }
+  ]
+}

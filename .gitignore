@@ -1,0 +1,25 @@
+# ambiente local
+.venv/
+__pycache__/
+*.pyc
+
+# ferramentas e anotações internas (não fazem parte do experimento)
+.claude/
+CLAUDE.md
+graphify-out/
+docs/TCC_contexto_para_novo_chat.md
+docs/TCC_status_*.md
+docs/briefing_inicial.md
+docs/video_claude_pesquisa_transcricao.md
+
+# artigo: fica fora do repositório até a defesa
+docs/artigo/
+
+# scripts de uso único que editaram documentos (não são código do experimento)
+experiments/_*.py
+!experiments/__init__.py
+experiments/sincronizar_apendices.py
+
+# alvo vAPI: código de terceiros, clonado no commit indicado no README.
+# A configuração local usada nos experimentos está em envs/vapi_config/.
+envs/vapi

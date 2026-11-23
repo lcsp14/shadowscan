@@ -1,0 +1,11 @@
+execucao,n,seed,auth,precisao,revocacao,f1,vp,fp,fn,precisao_bruta,f1_bruto,fp_bruto,gt_total,gt_descobertos,gt_diferencial_ok,rev_descoberta,rev_diferencial,precisao_caminho,revocacao_caminho,f1_caminho,gt_caminho,vp_caminho,gt_metodo,vp_metodo,requisicoes,erros,segundos,fn_lista,fp_lista,fn_nao_descobertos,fn_diferencial
+n3_s1_auth-nao,3,1,nao,1.0,1.0,1.0,3,0,0,0.3,0.4615,7,3,3,3,1.0,1.0,1.0,1.0,1.0,3,3,0,0,191390,13,3124.4,[],[],[],[]
+n3_s2_auth-nao,3,2,nao,1.0,0.6667,0.8,2,0,1,0.2222,0.3333,7,3,2,2,0.6666666666666666,1.0,1.0,0.6667,0.8,3,2,0,0,178207,0,2284.66,['GET /vapi/api10/user/flag'],[],['GET /vapi/api10/user/flag'],[]
+n3_s3_auth-nao,3,3,nao,1.0,1.0,1.0,3,0,0,0.3,0.4615,7,3,3,3,1.0,1.0,1.0,1.0,1.0,3,3,0,0,191390,9,4118.64,[],[],[],[]
+n3_s4_auth-nao,3,4,nao,1.0,1.0,1.0,3,0,0,0.3,0.4615,7,3,3,3,1.0,1.0,1.0,1.0,1.0,2,2,1,1,191390,0,2328.85,[],[],[],[]
+n3_s5_auth-nao,3,5,nao,1.0,1.0,1.0,3,0,0,0.3,0.4615,7,3,3,3,1.0,1.0,1.0,1.0,1.0,2,2,1,1,191390,17,4155.99,[],[],[],[]
+n6_s1_auth-nao,6,1,nao,1.0,0.6667,0.8,4,0,2,0.3636,0.4706,7,6,4,4,0.6666666666666666,1.0,1.0,0.6667,0.8,6,4,0,0,178194,0,2082.02,"['GET /vapi/api10/user/flag', 'GET /vapi/user']",[],"['GET /vapi/api10/user/flag', 'GET /vapi/user']",[]
+n6_s2_auth-nao,6,2,nao,1.0,0.5,0.6667,3,0,3,0.3,0.375,7,6,3,3,0.5,1.0,1.0,0.5,0.6667,4,1,2,2,165007,0,1926.78,"['GET /vapi/api10/user/flag', 'GET /vapi/dashboard/flag', 'POST /vapi/api4/otp/verify']",[],"['GET /vapi/api10/user/flag', 'GET /vapi/dashboard/flag', 'POST /vapi/api4/otp/verify']",[]
+n6_s3_auth-nao,6,3,nao,1.0,0.5,0.6667,3,0,3,0.3,0.375,7,6,3,3,0.5,1.0,1.0,0.5,0.6667,6,3,0,0,184763,0,2178.1,"['GET /vapi/serversurfer', 'GET /vapi/user', 'POST /vapi/api4/otp/verify']",[],"['GET /vapi/serversurfer', 'GET /vapi/user', 'POST /vapi/api4/otp/verify']",[]
+n6_s4_auth-nao,6,4,nao,1.0,0.6667,0.8,4,0,2,0.3636,0.4706,7,6,4,4,0.6666666666666666,1.0,1.0,0.6667,0.8,6,4,0,0,178194,0,2124.57,"['GET /vapi/api10/user/flag', 'GET /vapi/user']",[],"['GET /vapi/api10/user/flag', 'GET /vapi/user']",[]
+n6_s5_auth-nao,6,5,nao,1.0,0.5,0.6667,3,0,3,0.3,0.375,7,6,3,3,0.5,1.0,1.0,0.5,0.6667,5,2,1,1,158429,0,1888.31,"['GET /vapi/api8/user/secret', 'GET /vapi/dashboard/flag', 'POST /vapi/api8/user/login']",[],"['GET /vapi/api8/user/secret', 'GET /vapi/dashboard/flag', 'POST /vapi/api8/user/login']",[]

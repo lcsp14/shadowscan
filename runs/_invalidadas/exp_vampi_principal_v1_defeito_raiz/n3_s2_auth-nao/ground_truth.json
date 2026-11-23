@@ -1,0 +1,21 @@
+{
+  "n": 3,
+  "seed": 2,
+  "removidos": [
+    {
+      "method": "GET",
+      "path": "/",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/books/v1",
+      "tipo": "metodo"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/v1/{username}/password",
+      "tipo": "caminho"
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "config": {
+    "url": "http://127.0.0.1:8000",
+    "spec": "runs\\exp_vapi_principal\\n3_s1_auth-nao\\spec_degradada.yml",
+    "wordlists": [
+      "C:\\dev\\TCC\\wordlists\\seclists_objects.txt",
+      "C:\\dev\\TCC\\wordlists\\seclists_actions.txt"
+    ],
+    "n_palavras": 3291,
+    "metodos": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+    "metodos_fase_a": [
+      "GET",
+      "POST"
+    ],
+    "concorrencia": 10,
+    "template_policy": "declarado",
+    "param_value": "1",
+    "limiar_similaridade": 0.9,
+    "autenticado": false,
+    "renovacao_auth_s": null
+  },
+  "execucao": {
+    "requisicoes": 191390,
+    "erros": 13,
+    "renovacoes_auth": 0,
+    "caminhos_vivos": 32,
+    "segundos": 3124.4
+  },
+  "n_declarados": 30,
+  "shadow": [
+    {
+      "method": "GET",
+      "path": "/",
+      "origem": "raiz",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "DELETE",
+      "path": "/favicon.ico",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "PATCH",
+      "path": "/favicon.ico",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "POST",
+      "path": "/favicon.ico",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "PUT",
+      "path": "/favicon.ico",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "GET",
+      "path": "/vapi",
+      "origem": "prefixo",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api2/user/details",
+      "origem": "wordlist",
+      "status": 403,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api3/user",
+      "origem": "prefixo",
+      "status": 201,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api6/user",
+      "origem": "prefixo",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    }
+  ],
+  "zombie": [
+    "POST /vapi/api7/user",
+    "GET /vapi/user"
+  ],
+  "ambiguos": [],
+  "observados": [
+    {
+      "method": "GET",
+      "path": "/",
+      "template": null,
+      "origem": "raiz",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/favicon.ico",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "PATCH",
+      "path": "/favicon.ico",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/favicon.ico",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/favicon.ico",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/vapi",
+      "template": null,
+      "origem": "prefixo",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api1/user",
+      "template": null,
+      "origem": "declarado",
+      "status": 500
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api1/user/1",
+      "template": "/vapi/api1/user/{id}",
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "PUT",
+      "path": "/vapi/api1/user/1",
+      "template": "/vapi/api1/user/{id}",
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api1/user/{param}",
+      "template": "/vapi/api1/user/{param}",
+      "origem": "coringa",
+      "status": 403
+    },
+    {
+      "method": "PUT",
+      "path": "/vapi/api1/user/{param}",
+      "template": "/vapi/api1/user/{param}",
+      "origem": "coringa",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api10/user/flag",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api2/user/details",
+      "template": null,
+      "origem": "wordlist",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api2/user/login",
+      "template": null,
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api3/comment",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api3/comment",
+      "template": null,
+      "origem": "declarado",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api3/user",
+      "template": null,
+      "origem": "prefixo",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api3/user/login",
+      "template": null,
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api4/login",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api4/otp/verify",
+      "template": null,
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api4/user",
+      "template": null,
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api5/user",
+      "template": null,
+      "origem": "declarado",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api5/user/1",
+      "template": "/vapi/api5/user/{id}",
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api5/user/{param}",
+      "template": "/vapi/api5/user/{param}",
+      "origem": "coringa",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api5/users",
+      "template": null,
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api6/user",
+      "template": null,
+      "origem": "prefixo",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api6/user/me",
+      "template": null,
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api7/user/key",
+      "template": null,
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api7/user/login",
+      "template": null,
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api7/user/logout",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api8/user/login",
+      "template": null,
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/api8/user/secret",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api9/v1/user/login",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/api9/v2/user/login",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/dashboard/flag",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/jwt/user",
+      "template": null,
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/jwt/user",
+      "template": null,
+      "origem": "declarado",
+      "status": 500
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/serversurfer",
+      "template": null,
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/vapi/stickynotes",
+      "template": null,
+      "origem": "declarado",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/vapi/stickynotes",
+      "template": null,
+      "origem": "declarado",
+      "status": 201
+    }
+  ],
+  "metricas_brutas": {
+    "intrinsecos_excluidos": 0,
+    "vp": 3,
+    "fp": 7,
+    "fn": 0,
+    "precisao": 0.3,
+    "revocacao": 1.0,
+    "f1": 0.4615,
+    "revocacao_por_tipo": {
+      "caminho": {
+        "total": 3,
+        "encontrados": 3
+      }
+    },
+    "lista_vp": [
+      "GET /vapi/api2/user/details",
+      "POST /vapi/api3/user",
+      "POST /vapi/api6/user"
+    ],
+    "lista_fp": [
+      "DELETE /favicon.ico",
+      "GET /",
+      "GET /favicon.ico",
+      "GET /vapi",
+      "PATCH /favicon.ico",
+      "POST /favicon.ico",
+      "PUT /favicon.ico"
+    ],
+    "lista_fn": []
+  },
+  "metricas": {
+    "intrinsecos_excluidos": 0,
+    "vp": 3,
+    "fp": 7,
+    "fn": 0,
+    "precisao": 0.3,
+    "revocacao": 1.0,
+    "f1": 0.4615,
+    "revocacao_por_tipo": {
+      "caminho": {
+        "total": 3,
+        "encontrados": 3
+      }
+    },
+    "lista_vp": [
+      "GET /vapi/api2/user/details",
+      "POST /vapi/api3/user",
+      "POST /vapi/api6/user"
+    ],
+    "lista_fp": [
+      "DELETE /favicon.ico",
+      "GET /",
+      "GET /favicon.ico",
+      "GET /vapi",
+      "PATCH /favicon.ico",
+      "POST /favicon.ico",
+      "PUT /favicon.ico"
+    ],
+    "lista_fn": []
+  }
+}

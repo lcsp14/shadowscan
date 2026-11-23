@@ -1,0 +1,21 @@
+{
+  "n": 3,
+  "seed": 5,
+  "removidos": [
+    {
+      "method": "GET",
+      "path": "/createdb",
+      "tipo": "caminho"
+    },
+    {
+      "method": "POST",
+      "path": "/users/v1/register",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/{username}",
+      "tipo": "metodo"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "n": 6,
+  "seed": 5,
+  "removidos": [
+    {
+      "method": "GET",
+      "path": "/",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/createdb",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "tipo": "caminho"
+    },
+    {
+      "method": "POST",
+      "path": "/users/v1/login",
+      "tipo": "caminho"
+    },
+    {
+      "method": "POST",
+      "path": "/users/v1/register",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/{username}",
+      "tipo": "metodo"
+    }
+  ]
+}

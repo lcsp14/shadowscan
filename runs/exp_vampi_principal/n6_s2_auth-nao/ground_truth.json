@@ -1,0 +1,36 @@
+{
+  "n": 6,
+  "seed": 2,
+  "removidos": [
+    {
+      "method": "GET",
+      "path": "/",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/books/v1",
+      "tipo": "caminho"
+    },
+    {
+      "method": "POST",
+      "path": "/books/v1",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "tipo": "caminho"
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/{username}",
+      "tipo": "metodo"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/v1/{username}/password",
+      "tipo": "caminho"
+    }
+  ]
+}

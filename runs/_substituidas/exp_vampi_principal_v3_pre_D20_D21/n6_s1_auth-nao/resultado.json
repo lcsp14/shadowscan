@@ -1,0 +1,386 @@
+{
+  "config": {
+    "url": "http://127.0.0.1:5000",
+    "spec": "runs\\exp_vampi_principal\\n6_s1_auth-nao\\spec_degradada.yml",
+    "wordlists": [
+      "C:\\dev\\TCC\\wordlists\\seclists_objects.txt",
+      "C:\\dev\\TCC\\wordlists\\seclists_actions.txt"
+    ],
+    "n_palavras": 3291,
+    "metodos": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+    "metodos_fase_a": [
+      "GET",
+      "POST"
+    ],
+    "concorrencia": 10,
+    "template_policy": "declarado",
+    "param_value": "1",
+    "limiar_similaridade": 0.9,
+    "autenticado": false
+  },
+  "execucao": {
+    "requisicoes": 46285,
+    "erros": 0,
+    "caminhos_vivos": 15,
+    "segundos": 281.94
+  },
+  "n_declarados": 8,
+  "shadow": [
+    {
+      "method": "GET",
+      "path": "/books/v1",
+      "origem": "prefixo",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "POST",
+      "path": "/books/v1",
+      "origem": "prefixo",
+      "status": 401,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "DELETE",
+      "path": "/console",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "GET",
+      "path": "/console",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "PATCH",
+      "path": "/console",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "POST",
+      "path": "/console",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "PUT",
+      "path": "/console",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "GET",
+      "path": "/ui",
+      "origem": "wordlist",
+      "status": 308,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/admin",
+      "origem": "wordlist",
+      "status": 200,
+      "ambiguo_com": null,
+      "categoria": "administrativo"
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/message",
+      "origem": "wordlist",
+      "status": 404,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "POST",
+      "path": "/users/v1/register",
+      "origem": "wordlist",
+      "status": 400,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/status",
+      "origem": "wordlist",
+      "status": 404,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/{username}",
+      "origem": "declarado",
+      "status": 404,
+      "ambiguo_com": null,
+      "categoria": "nao_classificado"
+    }
+  ],
+  "zombie": [],
+  "ambiguos": [],
+  "observados": [
+    {
+      "method": "GET",
+      "path": "/",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/books/v1",
+      "template": null,
+      "origem": "prefixo",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/books/v1",
+      "template": null,
+      "origem": "prefixo",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/books/v1/1",
+      "template": "/books/v1/{book_title}",
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/books/v1/{param}",
+      "template": "/books/v1/{param}",
+      "origem": "coringa",
+      "status": 401
+    },
+    {
+      "method": "DELETE",
+      "path": "/console",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/console",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "PATCH",
+      "path": "/console",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/console",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/console",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "template": null,
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/ui",
+      "template": null,
+      "origem": "wordlist",
+      "status": 308
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1",
+      "template": null,
+      "origem": "declarado",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/users/v1/1",
+      "template": "/users/v1/{username}",
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/1",
+      "template": "/users/v1/{username}",
+      "origem": "declarado",
+      "status": 404
+    },
+    {
+      "method": "PUT",
+      "path": "/users/v1/1/email",
+      "template": "/users/v1/{username}/email",
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "PUT",
+      "path": "/users/v1/1/password",
+      "template": "/users/v1/{username}/password",
+      "origem": "declarado",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/admin",
+      "template": null,
+      "origem": "wordlist",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/users/v1/login",
+      "template": null,
+      "origem": "declarado",
+      "status": 400
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/message",
+      "template": null,
+      "origem": "wordlist",
+      "status": 404
+    },
+    {
+      "method": "POST",
+      "path": "/users/v1/register",
+      "template": null,
+      "origem": "wordlist",
+      "status": 400
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/status",
+      "template": null,
+      "origem": "wordlist",
+      "status": 404
+    },
+    {
+      "method": "DELETE",
+      "path": "/users/v1/{param}",
+      "template": "/users/v1/{param}",
+      "origem": "coringa",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/users/v1/{param}",
+      "template": "/users/v1/{param}",
+      "origem": "coringa",
+      "status": 404
+    }
+  ],
+  "metricas_brutas": {
+    "intrinsecos_excluidos": 0,
+    "vp": 4,
+    "fp": 9,
+    "fn": 2,
+    "precisao": 0.3077,
+    "revocacao": 0.6667,
+    "f1": 0.4211,
+    "revocacao_por_tipo": {
+      "caminho": {
+        "total": 5,
+        "encontrados": 3
+      },
+      "metodo": {
+        "total": 1,
+        "encontrados": 1
+      }
+    },
+    "lista_vp": [
+      "GET /books/v1",
+      "GET /users/v1/{}",
+      "POST /books/v1",
+      "POST /users/v1/register"
+    ],
+    "lista_fp": [
+      "DELETE /console",
+      "GET /console",
+      "GET /ui",
+      "GET /users/v1/admin",
+      "GET /users/v1/message",
+      "GET /users/v1/status",
+      "PATCH /console",
+      "POST /console",
+      "PUT /console"
+    ],
+    "lista_fn": [
+      "GET /createdb",
+      "GET /users/v1/_debug"
+    ]
+  },
+  "metricas": {
+    "intrinsecos_excluidos": 6,
+    "vp": 4,
+    "fp": 3,
+    "fn": 2,
+    "precisao": 0.5714,
+    "revocacao": 0.6667,
+    "f1": 0.6154,
+    "revocacao_por_tipo": {
+      "caminho": {
+        "total": 5,
+        "encontrados": 3
+      },
+      "metodo": {
+        "total": 1,
+        "encontrados": 1
+      }
+    },
+    "lista_vp": [
+      "GET /books/v1",
+      "GET /users/v1/{}",
+      "POST /books/v1",
+      "POST /users/v1/register"
+    ],
+    "lista_fp": [
+      "GET /users/v1/admin",
+      "GET /users/v1/message",
+      "GET /users/v1/status"
+    ],
+    "lista_fn": [
+      "GET /createdb",
+      "GET /users/v1/_debug"
+    ]
+  }
+}
