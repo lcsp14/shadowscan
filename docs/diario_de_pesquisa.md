@@ -1202,6 +1202,34 @@ Nenhuma mudança em código de medição, dados ou números.
 
 O autor confirmou que E55–E60 encerram as exigências para a entrega. A tag `v1.0-tcc` (E59) apontava para um commit anterior à revisão E60, que alterou os arquivos-fonte dos Apêndices A, B, D e E. A tag foi movida para o commit que contém esta entrada, e o hash na Seção 6.5 do artigo foi atualizado. Pelo mesmo motivo de E59, o hash não é registrado aqui, porque esta entrada faz parte do próprio commit. O código da ferramenta e os dados de `runs/` são os mesmos (hashes do Apêndice D conferidos em E59, sem alteração desde então).
 
+### E62 — 25/11, 15:25 · Trabalho reformatado como monografia (Anexo II do Manual)
+
+O autor foi informado de que o trabalho, pelo tamanho, deve ser entregue como **monografia**, e não como artigo. O Manual do TCC aceita os dois formatos: artigo com no mínimo 20 laudas, monografia com no mínimo 40 laudas contando os elementos pré-textuais. Modelo seguido: "Modelo Monografia TCC 2025.2.doc" (Anexo II).
+
+Mudanças de formato, feitas por um conversor novo, `docs/artigo/ferramentas/md2docx_monografia.js`, que gera `monografia-tcc.docx`/`.pdf` em duas passadas com `gerar_monografia.ps1`. O conversor do artigo, `md2docx.js`, continua igual. O .md continua sendo a fonte única.
+
+- **Elementos pré-textuais**, sem número de página: capa, folha de rosto, folha de aprovação, Resumo e Abstract em páginas próprias e Sumário.
+  - A folha de rosto diz: "Bacharel em Engenharia de Software da Escola de Tecnologia Aplicada do Instituto de Ensino Superior - iCEV" (escola informada pelo autor).
+  - O orientador é o Esp. Keoma de Sousa Coelho.
+  - Na folha de aprovação a data fica em branco, para ser preenchida na defesa.
+- **Resumo e Abstract**: espaço simples, rótulo centralizado; palavras-chave em itálico, como pede o modelo.
+- **Sumário**: números de página medidos no PDF da primeira passada por `paginas_sumario.py`.
+- **Corpo**:
+  - Times 12, espaçamento 1,5 do Word, sem espaço entre parágrafos, recuo de 1,25 cm, margens 3/3/2/2;
+  - cada capítulo começa em página nova, com o título no formato "1. INTRODUÇÃO" (negrito, 14 pt) e os subtítulos como "2.1. Título";
+  - a faixa do iCEV do modelo vai no cabeçalho;
+  - o número de página fica no rodapé a partir da Introdução, contando desde a capa.
+- A nota de rodapé do autor (formação e e-mail) saiu, porque esses dados estão na capa e na folha de rosto.
+
+Mudanças de texto, todas de designação:
+
+- "neste/este artigo", "O artigo está organizado" e "tabelas deste artigo" passaram a "trabalho" (Seções 1, 4.7, 6.5 e 9);
+- nas fontes dos Apêndices B e E (`protocolo_experimental.md` e `protocolo_busca.md`), "no artigo" e "do artigo" passaram a "neste trabalho" e "deste trabalho". Os apêndices foram ressincronizados.
+
+**Páginas:** 75 no total. A Introdução começa na página 8, as Considerações finais terminam na 53 e as Referências começam na 54 (corpo: 46 páginas). O mínimo de 40 laudas foi atendido com folga.
+
+Nenhuma mudança em código de medição, dados ou números.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |

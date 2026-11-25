@@ -2,7 +2,7 @@
 
 Consolidado em 18/11/2026 a partir dos relatórios de busca (pasta `docs/literatura/`), sem alteração das contagens.
 
-**Atenção às contagens do OpenAlex.** As consultas desta tabela usaram, conforme o bloco, a busca geral do OpenAlex (`search`, que inclui o texto completo) ou o filtro de título e resumo. Por isso a mesma frase pode ter totais diferentes aqui: "undocumented endpoint" dá 32 na busca geral e 8 no filtro de título e resumo, e "zombie API" dá 15 e 1. A Tabela 1 do artigo usa apenas o filtro de título e resumo, refeito às 01h46 de 18/11/2026 para que todas as linhas tenham o mesmo critério.
+**Atenção às contagens do OpenAlex.** As consultas desta tabela usaram, conforme o bloco, a busca geral do OpenAlex (`search`, que inclui o texto completo) ou o filtro de título e resumo. Por isso a mesma frase pode ter totais diferentes aqui: "undocumented endpoint" dá 32 na busca geral e 8 no filtro de título e resumo, e "zombie API" dá 15 e 1. A Tabela 1 deste trabalho usa apenas o filtro de título e resumo, refeito às 01h46 de 18/11/2026 para que todas as linhas tenham o mesmo critério.
 
 ## Procedimento
 

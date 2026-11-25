@@ -174,7 +174,7 @@ enviados com corpo vazio (`{}`), e o estado do VAmPI foi reiniciado antes de cad
 
 ## 7. Ameaças à validade
 
-A1–A9 foram previstas antes da coleta dos dados usados no artigo e registradas neste protocolo em 17/11/2026, às 10:21 (diário E17). A bateria válida do VAmPI começou às 10:24 (E19). A10–A14 foram identificadas durante o desenvolvimento: A10 por um defeito durante a coleta (E22), A11 na revisão do texto (E24), A12 e A13 nos resultados (E29 e E32), A14 na revisão do texto (E56).
+A1–A9 foram previstas antes da coleta dos dados usados neste trabalho e registradas neste protocolo em 17/11/2026, às 10:21 (diário E17). A bateria válida do VAmPI começou às 10:24 (E19). A10–A14 foram identificadas durante o desenvolvimento: A10 por um defeito durante a coleta (E22), A11 na revisão do texto (E24), A12 e A13 nos resultados (E29 e E32), A14 na revisão do texto (E56).
 
 | Id | Ameaça | Tipo | Mitigação / tratamento |
 |---|---|---|---|
