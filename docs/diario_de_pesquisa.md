@@ -1198,6 +1198,10 @@ Nenhuma mudança em código, dados ou números.
 
 Nenhuma mudança em código de medição, dados ou números.
 
+### E61 — 25/11 · Tag `v1.0-tcc` movida para a versão de entrega
+
+O autor confirmou que E55–E60 encerram as exigências para a entrega. A tag `v1.0-tcc` (E59) apontava para um commit anterior à revisão E60, que alterou os arquivos-fonte dos Apêndices A, B, D e E. A tag foi movida para o commit que contém esta entrada, e o hash na Seção 6.5 do artigo foi atualizado. Pelo mesmo motivo de E59, o hash não é registrado aqui, porque esta entrada faz parte do próprio commit. O código da ferramenta e os dados de `runs/` são os mesmos (hashes do Apêndice D conferidos em E59, sem alteração desde então).
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
