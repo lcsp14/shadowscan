@@ -1218,7 +1218,7 @@ Mudanças de formato, feitas por um conversor novo, `docs/artigo/ferramentas/md2
   - Times 12, espaçamento 1,5 do Word, sem espaço entre parágrafos, recuo de 1,25 cm, margens 3/3/2/2;
   - cada capítulo começa em página nova, com o título no formato "1. INTRODUÇÃO" (negrito, 14 pt) e os subtítulos como "2.1. Título";
   - a faixa do iCEV do modelo vai no cabeçalho;
-  - o número de página fica no rodapé a partir da Introdução, contando desde a capa.
+  - o número de página segue a ABNT (NBR 14724), a pedido do autor: canto superior direito, a 2,45 cm da borda, logo abaixo do símbolo do iCEV na faixa, a partir da Introdução, contando desde a capa.
 - A nota de rodapé do autor (formação e e-mail) saiu, porque esses dados estão na capa e na folha de rosto.
 
 Mudanças de texto, todas de designação:
@@ -1229,6 +1229,8 @@ Mudanças de texto, todas de designação:
 **Páginas:** 75 no total. A Introdução começa na página 8, as Considerações finais terminam na 53 e as Referências começam na 54 (corpo: 46 páginas). O mínimo de 40 laudas foi atendido com folga.
 
 Nenhuma mudança em código de medição, dados ou números.
+
+**Tag.** Com autorização do autor, a tag `v1.0-tcc` foi movida para o commit que contém esta entrada, porque os arquivos-fonte dos Apêndices B e E mudaram. O hash na Seção 6.5 foi atualizado. Como em E59 e E61, o hash não é registrado aqui. Código e dados de `runs/` não mudaram.
 
 ## Decisões em aberto
 
