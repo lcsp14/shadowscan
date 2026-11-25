@@ -42,7 +42,7 @@ Cada operação removida recebe um **tipo** (D4):
 
 ### 2.1 Levantamento de shadows intrínsecos (N = 0)
 
-Antes da bateria, a ferramenta roda com a spec **original** (N=0, G=∅). Todo shadow reportado
+Antes da bateria, a ferramenta roda com a spec **original** (N = 0, G = ∅). Todo shadow reportado
 nessa condição é candidato a **shadow intrínseco**: endpoint real do alvo, ausente da spec
 original. O escopo é a superfície HTTP na origem da API (esquema, host e porta da URL base),
 seja o endpoint servido por rota de API, rota web, componente do framework ou arquivo
@@ -60,12 +60,12 @@ sempre reportadas ao lado das ajustadas.
 | Fator | Níveis | Justificativa |
 |---|---|---|
 | Alvo | VAmPI, vAPI | Frameworks diferentes (Flask/connexion × Laravel), comportamentos de "não encontrado" diferentes (404 × 500 `{}`) e specs de naturezas diferentes (escrita à mão × derivada do roteador) |
-| N (operações removidas) | 3, 6 | VAmPI tem 14 operações, então N=3 ≈ 21% e N=6 ≈ 43% da spec. Testa a estabilidade com degradação leve e forte. |
+| N (operações removidas) | 3, 6 | VAmPI tem 14 operações, então N = 3 ≈ 21% e N = 6 ≈ 43% da spec. Testa a estabilidade com degradação leve e forte. |
 | Semente | 1, 2, 3, 4, 5 | Cada semente sorteia um conjunto diferente de operações. Varia **quais** endpoints ficam ocultos e, com isso, o tipo de remoção. |
 | Autenticação | sem, com (usuário comum) | Endpoints protegidos podem responder igual antes e depois da autenticação (ver A2). Só no VAmPI (D16). |
 
-Desenho fatorial completo no VAmPI: 2 (N) × 5 (sementes) × 2 (auth) = **20 execuções**,
-mais 2 execuções N=0 (com e sem auth). No vAPI: 2 × 5 × 1 = **10 execuções**, mais 1 N=0.
+Desenho fatorial completo no VAmPI: 2 (N) × 5 (sementes) × 2 (autenticação) = **20 execuções**,
+mais 2 execuções com N = 0 (com e sem autenticação). No vAPI: 2 × 5 × 1 = **10 execuções**, mais 1 com N = 0.
 
 ### 3.2 Fixas (controladas)
 
@@ -103,7 +103,7 @@ Por convenção, P = 0 quando R* = ∅ (nada reportado).
   e a mesma chave canônica, ou se é um caminho concreto que casa com o template de g.
 - **Revocação da descoberta** = |G_O| / |G|
 - **Revocação do diferencial isolado** = |G_O ∩ R| / |G_O|
-- Identidade: Rev (fim-a-fim) = Rev_descoberta × Rev_diferencial, quando calculadas sobre
+- Identidade: Rev (fim a fim) = Rev_descoberta × Rev_diferencial, quando calculadas sobre
   o mesmo conjunto.
 
 Os falsos negativos são separados por causa:
@@ -123,7 +123,7 @@ indicativo (ver A4).
 
 ### 4.5 Agregação
 
-Para cada combinação (alvo, N, auth): média ± desvio padrão amostral entre as 5 sementes.
+Para cada combinação (alvo, N, autenticação): média ± desvio-padrão amostral entre as 5 sementes.
 Para as razões de contagem (tabelas 2 e 4 do `resumo.md`): soma dos numeradores ÷ soma dos
 denominadores (micro-média).
 
@@ -178,17 +178,17 @@ A1–A9 foram previstas antes da coleta dos dados usados no artigo e registradas
 
 | Id | Ameaça | Tipo | Mitigação / tratamento |
 |---|---|---|---|
-| A1 | **Spec original incompleta.** Se S não declara tudo, endpoints reais aparecem como FP. | Interna | Levantamento de intrínsecos (N=0) com verificação manual. Métricas bruta e ajustada lado a lado (D9). **Manifestada nos dois alvos (diário E12 e E34):** VAmPI, 6 endpoints servidos pelo framework (`/console` × 5, `GET /ui`); vAPI, 7 (`GET /`, `GET /vapi`, `/favicon.ico` × 5). Em nenhum dos dois é rota de API omitida: a spec do vAPI, derivada do roteador, também não cobre a superfície fora de `routes/api.php`. |
+| A1 | **Spec original incompleta.** Se S não declara tudo, endpoints reais aparecem como FP. | Interna | Levantamento de intrínsecos (N = 0) com verificação manual. Métricas bruta e ajustada lado a lado (D9). **Manifestada nos dois alvos (diário E12 e E34):** VAmPI, 6 endpoints servidos pelo framework (`/console` × 5, `GET /ui`); vAPI, 7 (`GET /`, `GET /vapi`, `/favicon.ico` × 5). Em nenhum dos dois é rota de API omitida: a spec do vAPI, derivada do roteador, também não cobre a superfície fora de `routes/api.php`. |
 | A2 | **Rotas protegidas indistinguíveis.** Um middleware de autenticação que responde 401 para qualquer caminho sob um prefixo torna rotas reais iguais ao baseline. | Interna | Fator autenticação no desenho. Limitação documentada (D6). **Manifestada no vAPI (diário E34):** o tratador global de exceções (`app/Exceptions/Handler.php:37–39`) responde `500 {}` a toda exceção. Rota inexistente, falta de credencial e erro de código ficam indistinguíveis. Duas rotas declaradas (`GET /vapi/user`, protegida por `auth:sanctum`; `POST /vapi/api7/user`, que lança exceção com o corpo `{}`) foram reportadas como operações declaradas não observadas, embora existam. |
 | A3 | **Wordlist.** A revocação depende da cobertura da wordlist. | Construto | Wordlist pública e **não ajustada ao alvo** (D14). Decomposição descoberta × diferencial (D17) separa esse efeito da contribuição central. |
 | A4 | **Tempo de execução.** Máquina não dedicada, com outros containers ativos. | Construto | Tempo reportado só como indicativo. Baterias de alvos diferentes **não** rodam em paralelo. |
 | A5 | **Poucos alvos (2), ambos didáticos.** | Externa | Alvos com frameworks e comportamentos diferentes. Generalização para APIs de produção fica como trabalho futuro. |
 | A6 | **Shadows plantados ≠ shadows naturais.** Endpoints removidos da spec são rotas "normais", enquanto shadows reais tendem a ser debug, admin ou versões antigas. | Externa | Complementado pelo achado de shadows naturais (QP4: `/console` no VAmPI). |
 | A7 | **Tamanho da amostra.** 5 sementes por condição. | Conclusão | Média ± desvio reportados. Sem testes de significância estatística, por causa do n pequeno. |
-| A8 | **Contagem por método.** Um caminho multi-método infla as contagens. | Construto | Métricas por caminho único (Seção 4.5). |
-| A9 | **Política para casos ambíguos.** O resultado depende de `template_policy`. | Interna | Política conservadora fixada a priori (D8). Casos ambíguos listados em cada resultado. |
+| A8 | **Contagem por método.** Um caminho multimétodo infla as contagens. | Construto | Métricas por caminho único (Seção 4.5). |
+| A9 | **Política para casos ambíguos.** O resultado depende de `template_policy`. | Interna | Política conservadora fixada *a priori* (D8). Casos ambíguos listados em cada resultado. |
 | A10 | **Credencial de vida curta.** Um token que expira durante a execução transforma "autenticado" em "credencial expirada" sem aviso, e os baselines obtidos antes e depois da expiração deixam de ser comparáveis (diário E22). | Interna | Renovação periódica da credencial (D19), com o número de renovações registrado em cada execução. |
-| A11 | **Classificação não avaliada.** O ground truth sintético raramente exercita as categorias heurísticas (VAmPI: 1 de 14 operações; vAPI: 3 de 33) e não fornece rótulo de categoria. | Construto | Declarar a classificação como recurso de apresentação, não como componente avaliado. Avaliação com shadows naturais rotulados → trabalho futuro. |
-| A12 | **Estado do alvo alterado pela própria varredura.** A descoberta sonda endpoints declarados que mudam estado. No VAmPI, `GET /createdb` executa `db.drop_all()` + `db.create_all()`. Com requisições concorrentes, algumas pegam o banco no meio da recriação (logs: 64 chamadas a `/createdb` na bateria, 3 respostas 500, 2 erros `no such table`). | Interna | Banco resetado antes de cada execução (D15). Efeito medido: 1 observação divergente em 10 pares de execuções equivalentes, nenhuma métrica alterada. Mecanismo verificado em log (diário E32): na execução divergente, a chamada da própria varredura a `/createdb` falhou (500), o banco ficou sem os usuários padrão e `GET /users/v1/admin` respondeu 404. Excluir o endpoint da sondagem foi descartado por ser ajuste ao alvo. |
+| A11 | **Classificação não avaliada.** O ground truth sintético raramente exercita as categorias heurísticas (VAmPI: 1 de 14 operações; vAPI: 3 de 33) e não fornece rótulo de categoria. | Construto | Declarar a classificação como recurso de apresentação, não como componente avaliado. Avaliação com shadows naturais rotulados fica como trabalho futuro. |
+| A12 | **Estado do alvo alterado pela própria varredura.** A descoberta sonda endpoints declarados que mudam estado. No VAmPI, `GET /createdb` executa `db.drop_all()` + `db.create_all()`. Com requisições concorrentes, algumas encontram o banco em recriação (logs: 64 chamadas a `/createdb` na bateria, 3 respostas 500, 2 erros `no such table`). | Interna | Banco resetado antes de cada execução (D15). Efeito medido: 1 observação divergente em 10 pares de execuções equivalentes, nenhuma métrica alterada. Mecanismo verificado em log (diário E32): na execução divergente, a chamada da própria varredura a `/createdb` falhou (500), o banco ficou sem os usuários padrão e `GET /users/v1/admin` respondeu 404. Excluir o endpoint da sondagem foi descartado por ser ajuste ao alvo. |
 | A13 | **Erosão de âncoras pela degradação.** No desenho por degradação, N controla ao mesmo tempo o número de shadows e a completude da especificação restante. Como a descoberta se ancora nos prefixos declarados, ocultar mais operações remove também a informação que ajudaria a encontrá-las. Em uma API real, as duas grandezas são independentes. | Construto | Efeito estimado por contrafactual (diário E32), não medido diretamente. Supondo que os 3 FN da subárvore `/books`, ocultada inteira, teriam sido encontrados com a âncora presente, N = 6 teria revocação de 0,77. Da queda entre N = 3 e N = 6 (0,80 → 0,67), 0,10 seria atribuível à perda de âncora e 0,03 ao sorteio de endpoints difíceis. O diferencial isolado não é afetado (1,00 nas duas condições). |
-| A14 | **Ferramenta aperfeiçoada durante os experimentos.** Cinco correções da análise (D10, D18–D21) foram motivadas por erros observados nas execuções do VAmPI e aplicadas antes da bateria definitiva, que foi refeita com o código corrigido (diário E08, E18, E22, E27). Os resultados do VAmPI vêm, portanto, de uma versão do código ajustada a partir de erros observados no próprio alvo, o que tende a favorecer as métricas medidas nele, em especial a precisão: D20 e D21 eliminaram falsos positivos vistos nessas execuções. | Interna | (a) **Correções de regra geral:** nenhuma usa caminho, palavra ou resposta próprios do VAmPI; ajustes ao alvo foram recusados (wordlist sem ajuste, D14; `GET /createdb` mantido na sondagem, A12). A exceção é o intervalo de renovação da D19 (45 s), escolhido pela validade de 60 s do token do VAmPI, que só atua na condição autenticada. (b) **Uma versão do código por resultado:** todas as execuções reportadas vêm do mesmo código (hashes no Apêndice D, conferidos de novo em 25/11/2026); dados de versões anteriores ficam em `runs/_substituidas/` e `runs/_invalidadas/`. (c) **Replicação em alvo não usado no desenvolvimento:** o vAPI foi executado depois, com o código já congelado e sem alteração motivada por seus dados, e repetiu a precisão ajustada de 1,00 e o diferencial isolado de 1,00 (E35). **Dimensão do ajuste** (`runs/_substituidas/exp_vampi_principal_v3_pre_D20_D21/`): antes de D20 e D21, 4 das 10 execuções sem auth tinham FP ajustados (11 no total), com precisão ajustada de 0,50 a 0,62 e média de 0,83, contra 1,00 na versão final; a revocação foi a mesma (12/15 e 20/30). **Efeito residual:** um único alvo reservado não basta para estimar a precisão em alvos não vistos. |
+| A14 | **Ferramenta aperfeiçoada durante os experimentos.** Cinco correções da análise (D10, D18–D21) foram motivadas por erros observados nas execuções do VAmPI e aplicadas antes da bateria definitiva, que foi refeita com o código corrigido (diário E08, E18, E22, E27). Os resultados do VAmPI vêm, portanto, de uma versão do código ajustada a partir de erros observados no próprio alvo, o que tende a favorecer as métricas medidas nele, em especial a precisão: D20 e D21 eliminaram falsos positivos vistos nessas execuções. | Interna | (a) **Correções de regra geral:** nenhuma usa caminho, palavra ou resposta próprios do VAmPI; ajustes ao alvo foram recusados (wordlist sem ajuste, D14; `GET /createdb` mantido na sondagem, A12). A exceção é o intervalo de renovação da D19 (45 s), escolhido pela validade de 60 s do token do VAmPI, que só atua na condição autenticada. (b) **Uma versão do código por resultado:** todas as execuções reportadas vêm do mesmo código (hashes no Apêndice D, conferidos de novo em 25/11/2026); dados de versões anteriores ficam em `runs/_substituidas/` e `runs/_invalidadas/`. (c) **Replicação em alvo não usado no desenvolvimento:** o vAPI foi executado depois, com o código já congelado e sem alteração motivada por seus dados, e repetiu a precisão ajustada de 1,00 e o diferencial isolado de 1,00 (E35). **Dimensão do ajuste** (`runs/_substituidas/exp_vampi_principal_v3_pre_D20_D21/`): antes de D20 e D21, 4 das 10 execuções sem autenticação tinham FP ajustados (11 no total), com precisão ajustada de 0,50 a 0,62 e média de 0,83, contra 1,00 na versão final; a revocação foi a mesma (12/15 e 20/30). **Efeito residual:** um único alvo reservado não basta para estimar a precisão em alvos não vistos. |

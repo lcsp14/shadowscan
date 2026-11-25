@@ -31,7 +31,7 @@ dependem de temporização. Ver ameaça à validade A4 (Apêndice B).
 | Dependências transitivas | anyio 4.16.0, certifi 2026.10.23, h11 0.16.0, httpcore 1.0.9, idna 3.20, markdown-it-py 4.3.0, mdurl 0.1.2, Pygments 2.21.0, typing_extensions 4.16.0 |
 | Biblioteca padrão usada nos pontos críticos | `difflib.SequenceMatcher` (similaridade, D5), `random.Random` (sorteio do ground truth, D4), `asyncio` (concorrência) |
 
-### 2.1 Hash dos arquivos que geraram os resultados (SHA-256, primeiros 16 hex)
+### 2.1 Hash dos arquivos que geraram os resultados (SHA-256, primeiros 16 caracteres hexadecimais)
 
 Hashes da versão **final** do código, usada na bateria definitiva do VAmPI (diário E27, após
 D18–D21). Versões anteriores e o motivo da substituição estão no diário (E18, E22, E27).
@@ -72,7 +72,7 @@ mesmo hash no disco e no repositório (versão `v1.0-tcc`).
 | Parâmetro | Valor | Decisão |
 |---|---|---|
 | Limiar de similaridade | 0,90 | D5 |
-| Caracteres comparados por corpo | 4000 | D5 |
+| Caracteres comparados por corpo | 4 000 | D5 |
 | Baselines globais por método | 3 de 1 segmento + 3 de 2 segmentos | D5 |
 | Baselines por pai e método | 2 | D6 |
 | Métodos da fase A | GET, POST | D10 |
@@ -94,11 +94,11 @@ mesmo hash no disco e no repositório (versão `v1.0-tcc`).
 | wordlists/seclists_actions.txt | SecLists, `Discovery/Web-Content/api/actions.txt`, branch `master`, baixado em 17/11/2026 | 224 | 2F1954945FA0E2A2 |
 | wordlists/seclists_api-endpoints.txt | SecLists, `Discovery/Web-Content/api/api-endpoints.txt` (baixado, **não usado** na configuração padrão) | 295 | 7860E451BEC345A0 |
 
-Wordlist efetiva (objects ∪ actions, após o filtro de `load_wordlist`) = **3291 palavras únicas**.
+Wordlist efetiva (objects ∪ actions, após o filtro de `load_wordlist`) = **3 291 palavras únicas**.
 O filtro descarta linhas vazias, comentários (`#`), entradas com `%` (ex.: `lost%2Bfound`)
 e a entrada `@`.
 
-Fonte: https://github.com/danielmiessler/SecLists. **Commit identificado a posteriori (18/11/2026, diário E40):** `6b19c2f5088c45b5dadb4d8918d2ab4f7efb03a9` (master de 17/11/2026, 11:10 UTC). Os SHA-256 de `objects.txt` e `actions.txt` nesse commit coincidem com os da tabela acima. Como o download foi feito da branch
+Fonte: https://github.com/danielmiessler/SecLists. **Commit identificado *a posteriori* (18/11/2026, diário E40):** `6b19c2f5088c45b5dadb4d8918d2ab4f7efb03a9` (master de 17/11/2026, 11:10 UTC). Os SHA-256 de `objects.txt` e `actions.txt` nesse commit coincidem com os da tabela acima. Como o download foi feito da branch
 `master`, os hashes acima fixam o conteúdo exato que foi usado.
 
 ---
@@ -115,7 +115,7 @@ Fonte: https://github.com/danielmiessler/SecLists. **Commit identificado a poste
 | Banco | SQLite (interno ao container), populado por `GET /createdb` |
 | Spec usada | `specs/vampi_openapi3.yml`, copiada do container (`/vampi/openapi_specs/openapi3.yml`). OpenAPI 3.0.1. 14 operações em 12 caminhos. SHA-256 35200F354F9C9968 |
 | Spec servida em runtime | `specs/vampi_openapi.json`, obtida em `GET /openapi.json`. Mesmas 14 operações. SHA-256 76B07B181769482B |
-| Natureza da spec | **escrita à mão** pelos autores do VAmPI. Não é derivada do código, e o experimento N=0 mostrou que está incompleta (ver diário, E07). |
+| Natureza da spec | **escrita à mão** pelos autores do VAmPI. Não é derivada do código, e o experimento com N = 0 mostrou que está incompleta (diário de pesquisa, E07). |
 
 ---
 

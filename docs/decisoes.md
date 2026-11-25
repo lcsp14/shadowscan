@@ -16,7 +16,7 @@ O parser não expande `{param}`. O casamento observado × template é feito no m
 - Barra inicial garantida; barra final removida (exceto em `/`).
 - Prefixo de `servers[0].url` (só o componente de caminho) é somado aos caminhos da spec.
 - Sem normalização de maiúsculas/minúsculas (caminhos HTTP são case-sensitive).
-- O NOME do parâmetro é ignorado na comparação: `/u/{id}` ≡ `/u/{user_id}` ≡ `/u/{param}`.
+- O **nome** do parâmetro é ignorado na comparação: `/u/{id}` ≡ `/u/{user_id}` ≡ `/u/{param}`.
 
 ## D4 — Unidade de remoção no ground truth = operação
 Cada remoção apaga um par (método, caminho). Se todos os métodos de um caminho forem
@@ -24,11 +24,11 @@ removidos, o caminho some da spec (tipo `caminho`); senão, tipo `metodo`.
 Sorteio com `random.Random(seed)` — toda execução é reprodutível pela semente.
 
 ## D5 — Soft 404: existência por comparação com baselines (`responses.py`)
-Uma resposta é "não encontrado" se tiver o MESMO status de um baseline E similaridade
+Uma resposta é "não encontrado" se tiver o **mesmo** status de um baseline **e** similaridade
 textual ≥ **0,90** (difflib `SequenceMatcher.ratio`) com ele.
 Antes de comparar, o corpo é normalizado: o caminho pedido e seu último segmento viram
-`{PATH}`/`{SEG}`; números ≥4 dígitos e hex ≥8 caracteres viram `{N}` (ids, timestamps).
-Só os primeiros 4000 caracteres entram na comparação (custo do difflib).
+`{PATH}`/`{SEG}`; números com 4 ou mais dígitos e sequências hexadecimais com 8 ou mais caracteres viram `{N}` (ids, timestamps).
+Só os primeiros 4 000 caracteres entram na comparação (custo do difflib).
 
 Alternativas descartadas:
 | Critério | Por que não |
@@ -43,7 +43,7 @@ Baselines: para cada método, 3 caminhos aleatórios de 1 segmento + 3 de 2 segm
 ## D6 — Baseline do pai para candidatos literais
 Candidato montado por wordlist (`/users/v1/admin`) também é comparado com
 `/users/v1/<aleatório>`. Se a resposta for igual, é o template `{username}` respondendo,
-não uma rota nova. Instâncias de templates DECLARADOS (`/users/v1/1`) NÃO são comparadas
+não uma rota nova. Instâncias de templates **declarados** (`/users/v1/1`) **não** são comparadas
 com o pai — para elas, "usuário não encontrado" é justamente a prova de que a rota existe.
 **Limitação:** uma rota literal que responde igual ao template (ex.: ambas dão 401 antes de
 qualquer lógica) é indistinguível → falso negativo.
@@ -52,14 +52,14 @@ qualquer lógica) é indistinguível → falso negativo.
 `/users/v1/{username}` é sondado como `/users/v1/1`. Fixo e configurável (`--param-value`).
 
 ## D8 — Precedência no casamento (motor diferencial)
-1. literal exato; 2. por template (`{param}` casa exatamente 1 segmento; mesmo nº de segmentos).
+1. literal exato; 2. por template (`{param}` casa exatamente 1 segmento; mesmo número de segmentos).
 Caso 2 é ambíguo (`/users/v1/admin` pode ser usuário "admin" ou rota escondida).
 Política padrão `declarado` (conservadora: assume template); alternativa `shadow`.
 Casos ambíguos são sempre listados no relatório.
 
 ## D9 — Shadows intrínsecos excluídos do FP
 A spec "completa" do alvo pode não ser completa. Rodando a ferramenta com a spec original
-(N=0), o que aparece são shadows REAIS do alvo. Após verificação manual, são listados em
+(N = 0), o que aparece são shadows **reais** do alvo. Após verificação manual, são listados em
 `specs/<alvo>_intrinsecos.json` e retirados do conjunto reportado antes de contar FP.
 Métricas brutas (sem a exclusão) também são registradas.
 VAmPI: `/console` (Werkzeug Debugger, 5 métodos) e `GET /ui` (Swagger UI, 308).
@@ -92,23 +92,23 @@ roteamento. Redirecionamentos não são seguidos (3xx é resposta válida, ex.: 
 
 ## D14 — Wordlist padrão
 SecLists `Discovery/Web-Content/api/objects.txt` + `actions.txt`, sem edição
-(~3.300 palavras únicas). Aplicada na raiz e sob cada prefixo literal da spec.
+(cerca de 3 300 palavras únicas). Aplicada na raiz e sob cada prefixo literal da spec.
 **Não** foi ajustada ao alvo: palavras ausentes (ex.: `createdb`, `_debug` no VAmPI)
 geram FN, reportados como limitação de cobertura de wordlist.
 
 ## D15 — Estado do alvo
 Antes de cada execução da bateria, o banco do alvo é resetado (`GET /createdb` no VAmPI).
-Execução autenticada usa um usuário comum (não-admin) criado pelo script.
+Execução autenticada usa um usuário comum (não administrador) criado pelo script.
 
 ## D16 — Spec do vAPI derivada das rotas do Laravel
 O vAPI não publica OpenAPI (só coleção Postman). A spec foi gerada de
 `vapi/routes/api.php` (`experiments/laravel_routes_to_openapi.py`), com prefixo `/vapi`
-(de `RouteServiceProvider`). 33 operações = 33 declarações `Route::` do arquivo.
+(de `RouteServiceProvider`). As 33 operações correspondem às 33 declarações `Route::` do arquivo.
 Rotas de `routes/web.php` (`/`, `/vapi` — páginas HTML) ficam fora da spec, que reproduz
 só `routes/api.php`. A completude da spec vale para as rotas desse arquivo, não para toda a
 superfície da aplicação. Continuam no escopo da análise (superfície HTTP na origem da API, D9):
 se a ferramenta encontrá-las, entram como shadows intrínsecos após verificação, como no VAmPI.
-vAPI é executado só sem autenticação (cada sub-API tem esquema próprio).
+O vAPI é executado só sem autenticação (cada sub-API tem esquema próprio).
 
 ## D17 — Decomposição da revocação: descoberta × diferencial
 A degradação de spec mede descoberta e diferencial juntos. Para isolar a contribuição
@@ -117,7 +117,7 @@ central, `experiments/analyze.py` reporta (só análise, sem nova execução):
   se alguma observação do mesmo método tem a mesma chave canônica (inclui `{param}` da
   fase C) ou é um caminho concreto que casa com o template removido.
 - **Revocação do diferencial isolado** = removidos em O classificados como shadow / removidos em O.
-- Revocação fim-a-fim = descoberta × diferencial.
+- Revocação fim a fim = descoberta × diferencial.
 Também reporta métricas por caminho único (ignorando método), além de por (método, caminho),
 e sempre as versões bruta e ajustada (D9) em tabelas adjacentes.
 
@@ -130,7 +130,7 @@ candidato literal (comparado aos baselines global e do pai; o pai de `/` é a ra
 baseline coincide com o global). Teste de regressão: `test_raiz_sempre_candidata`.
 **Impacto nos dados.** A bateria do VAmPI iniciada às 10:05 foi **interrompida e
 invalidada** (4 execuções completas, arquivadas em `runs/_invalidadas/`) e refeita do zero
-com o código corrigido, incluindo o N=0.
+com o código corrigido, incluindo o N = 0.
 **Não corrigido:** a wordlist não é aplicada sob prefixos com parâmetro
 (`/users/v1/{username}/<palavra>`). Fica como limitação e trabalho futuro (diário E13).
 
@@ -147,7 +147,7 @@ sob um lock, antes de cada requisição em que o intervalo venceu. Os headers pa
 enviados por requisição, e não fixados no cliente HTTP, para que a renovação valha
 imediatamente. O número de renovações é registrado em `execucao.renovacoes_auth`.
 
-**Invariância sem autenticação.** Sem `auth_refresh` (todas as execuções sem auth e a CLI com
+**Invariância sem autenticação.** Sem `auth_refresh` (todas as execuções sem autenticação e a CLI com
 header fixo), `maybe_refresh_auth` retorna imediatamente e os headers enviados são os mesmos
 de antes. Isso é coberto pelo teste `test_sem_provedor_headers_fixos`. Por isso, as execuções
 sem autenticação da bateria E19, feitas antes da D19, permanecem válidas.
@@ -177,5 +177,5 @@ virava FP. A D8 já agrupava literais em templates **declarados**, mas não em t
 de versão parametrizadas). Um literal do mesmo método que casa com um deles é registrado como
 **ambíguo** e agrupado no template (política `declarado`). Com a política `shadow`, continua reportado
 à parte. Testes: `test_literal_agrupado_no_coringa` e `test_metodo_diferente_nao_agrupa`.
-**Impacto medido offline** nas 10 execuções sem auth anteriores, recalculando só o diff a partir das
+**Impacto medido sem nova execução** nas 10 execuções sem autenticação anteriores, recalculando só o diff a partir das
 observações gravadas: precisão de 0,50–0,62 → **1,00** nas 4 execuções afetadas; revocação inalterada.

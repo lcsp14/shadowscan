@@ -1121,6 +1121,83 @@ Os outros 9 arquivos da tabela têm o mesmo hash na tabela, no disco e no commit
 
 Nenhuma mudança em código, dados ou números.
 
+### E60 — 25/11, 09:56 · Revisão de referências, ortografia e padronização
+
+**Pedido:** revisar referências, ortografia e padronização do documento.
+
+**Método:** a conferência das referências foi feita por script descartável. A leitura de ortografia e padronização foi dividida em três trechos (Seções 1–4, Seções 5–9, declaração e apêndices), por leitores independentes que só reportaram. Cada apontamento foi conferido no arquivo e no PDF antes de ser aplicado. Os erros dos apêndices foram corrigidos nos arquivos-fonte, e o sync regenerou os apêndices.
+
+**1. Referências.** Os 28 itens da lista são citados no corpo, e toda citação autor-data tem item correspondente, com o mesmo ano. Os nomes fora da lista que o script encontrou são categorias OWASP (API1, API3, API7), nome de ferramenta (APICARV) e a forma narrativa "Bar-Yossef et al.". Os itens estão em ordem alfabética, no formato NBR 6023. Única correção: no item do `difflib`, o subtítulo passou a ser separado por dois-pontos, e não por travessão. O subtítulo interno "Referências conferidas" e a nota de redação não saem no Word (conferido no PDF).
+
+**2. Ortografia e gramática (corpo):**
+- "micro-média" passou a "micromédia";
+- "desvio padrão" passou a "desvio-padrão", forma do VOLP (também em `protocolo_experimental.md`);
+- regência: "os frameworks os respondem" passou a "respondem a eles";
+- "classificá-lo errado" passou a "classificá-lo incorretamente";
+- "Três delas são previstas" passou a "haviam sido previstas";
+- "e mostrou que" passou a "e mostra que", para concordar no tempo verbal;
+- ordem das palavras: "trabalhos revisados por pares localizados" passou a "trabalhos localizados que foram revisados por pares";
+- "pré-prints" passou a "preprints";
+- hífen com espaços passou a meia-risca em "iCEV – PI" e "Teresina – PI";
+- dois parágrafos de texto final que estavam inteiros em itálico (Seção 8.2, "Com esse enquadramento…"; abertura da 8.7) passaram a redondo;
+- **Abstract:** "the API9:2023 category of", "on VAmPI… on vAPI… operations removed, respectively" e "discovery and differential components".
+
+**3. Ortografia e linguagem interna (fontes dos apêndices):**
+- `decisoes.md`:
+  - "não-admin" passou a "não administrador";
+  - "fim-a-fim" passou a "fim a fim";
+  - artigo acrescentado em "O vAPI é executado";
+  - caixa-alta usada como ênfase (NOME, MESMO, E, DECLARADOS, NÃO, REAIS) passou a negrito;
+  - "≥4 dígitos e hex ≥8" escrito por extenso;
+  - "nº" passou a "número";
+  - "~3.300" passou a "cerca de 3 300";
+  - "33 operações = 33 declarações" passou a frase;
+  - "sem auth" passou a "sem autenticação";
+  - "offline" passou a "sem nova execução";
+- `protocolo_experimental.md`:
+  - "multi-método" passou a "multimétodo";
+  - "pegam o banco no meio da recriação" passou a "encontram o banco em recriação";
+  - "→ trabalho futuro" passou a "fica como trabalho futuro";
+  - "auth" passou a "autenticação";
+  - "fim-a-fim" passou a "fim a fim";
+- `protocolo_busca.md`:
+  - "anti-robô" passou a "antirrobô";
+  - saiu "(item visto no resultado da #16)";
+  - a linha de buscas dirigidas com termos truncados e "(n/a)" foi reescrita por extenso;
+- `ambiente_experimental.md`:
+  - "(ver diário, E07)" passou a "(diário de pesquisa, E07)";
+  - "16 hex" passou a "16 caracteres hexadecimais";
+- `experiments/sincronizar_apendices.py`, Apêndice C (o CSV não foi alterado):
+  - o valor "nao" passou a "não";
+  - o cabeçalho "Auth" passou a "Autent.", com a legenda explicando;
+  - separador de milhar nas requisições e no tempo.
+
+**4. Padronização:**
+- **Notação:** "N=0" passou a "N = 0" nos apêndices, como no corpo (blocos de código mantidos).
+- **Separador de milhar com espaço**, como no corpo ("46 291"): "4000" passou a "4 000"; "3291" passou a "3 291"; e 22 totais do Apêndice E, que usavam ponto, passaram a usar espaço.
+- **Siglas expandidas na primeira ocorrência do corpo:** REST (*Representational State Transfer*), NIST, OWASP, BOLA e BOPLA. A expansão repetida na Seção 2.1 saiu.
+- **Tabelas da Seção 7:**
+  - a nota sobre "±" e somas, antes repetida de forma desigual em algumas legendas, virou uma frase única no início da 7.2, com as legendas limpas;
+  - Tabelas 12 e 13 com o mesmo título e os mesmos cabeçalhos;
+  - "Erros de rede (soma)" nas Tabelas 17 e 18;
+  - o pseudotítulo "**Custo no vAPI**" virou frase;
+  - "**vAPI:**" passou a "**vAPI.**", como nos demais blocos.
+- **Itálico** (decisão do autor: termos técnicos sem itálico):
+  - endpoint, shadow, zombie, template, wordlist, baseline, framework, token, hash, commit, script, timeout, digest, proxy, middleware, threads, workers, tag, flag, soft 404, hard-404 e ground truth ficam em redondo (61 ocorrências alteradas no corpo; as fontes dos apêndices já estavam assim);
+  - latinismos em itálico (*a priori*, *a posteriori*);
+  - trechos citados em inglês continuam em itálico (*rogue or shadow APIs*, *zombie or deprecated APIs*, *soft-404 pages*);
+  - a convenção está declarada em nota de rodapé na definição de shadow endpoints (Seção 1).
+
+**Não alterado, por decisão fundamentada:**
+- "em um/uma" × "num/numa": as duas formas são corretas;
+- "(MANNING; RAGHAVAN; SCHÜTZE, 2008, seção 8.3)": a localização por seção identifica o trecho numa obra sem paginação única online;
+- "rota-coringa": grafia registrada;
+- formato de horários nos apêndices (10:21): é o registro técnico do diário.
+
+**Páginas:** o PDF tinha 59. A primeira versão desta revisão foi a 61, por causa das notas repetidas nas legendas e dos cabeçalhos longos copiados para a Tabela 13. A nota única na Seção 7.2 e os cabeçalhos curtos devolveram o corpo à página 40 (Referências na 41).
+
+Nenhuma mudança em código de medição, dados ou números.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
