@@ -1019,6 +1019,87 @@ Nota do orientador preenchida com os dados que ele forneceu: graduações, espec
 
 Revisto no mesmo dia: o orientador pediu só "Esp. Keoma de Sousa Coelho" na linha de autoria, sem nota de rodapé. A nota foi retirada, e o artigo fica com uma única nota, a do autor.
 
+### E55 — 25/11 · Resumo e Abstract: endpoints da API × superfície HTTP exposta
+
+**Pedido:** diferenciar, no Resumo e no Abstract, os endpoints da API da superfície HTTP exposta.
+
+**Conferência:** procede. O corpo já separa as duas coisas:
+- **Seção 4.3 e D9:** o escopo é a superfície HTTP na origem da API (esquema, host e porta), não só as rotas de API;
+- **D16:** a spec do vAPI cobre só `routes/api.php`;
+- **QP4 e Considerações finais:** nenhuma rota de API da aplicação ficou fora das specs; a divergência está fora dessas rotas.
+
+O Resumo falava só em "superfície exposta" e apresentava o `/console` sem dizer que é componente do framework, o que permitia ler o achado como rota de API não declarada. Além disso, "endpoints não declarados já presentes nas especificações originais" se contradiz: os intrínsecos respondem no alvo e não constam da spec.
+
+**Alterações, no Resumo e no Abstract:**
+1. **Primeira frase:** define a superfície HTTP exposta na origem da API como as rotas da API mais rotas web, componentes do framework e arquivos estáticos.
+2. **Precisão:** "endpoints não declarados já presentes nas especificações originais" passou a "endpoints que já respondiam nos alvos sem constar das especificações originais".
+3. **Achado:** antes dele entra o resultado da QP4 (nenhuma rota de API não declarada nos dois alvos; a divergência está fora dessas rotas). O console do Werkzeug passa a ser qualificado como componente do framework.
+
+**Tamanho:** o Resumo passou para 363 palavras e o Abstract para 341, dentro do limite de 150–500.
+
+Nenhuma mudança em código, dados ou números.
+
+### E56 — 25/11 · Ameaça A14: aperfeiçoamento da ferramenta durante os experimentos
+
+**Pedido:** reconhecer na Metodologia, como limitação, o aperfeiçoamento da ferramenta durante os experimentos.
+
+**Conferência:** procede. A Seção 8.6 apresentava as correções D10, D18, D19, D20 e D21 só como mérito ("a validação como instrumento de detecção de defeitos"), sem registrar o custo. Todas foram motivadas por erros observados em execuções do VAmPI (E08, E13/E18, E22, E27), e a bateria definitiva do VAmPI foi refeita depois delas, no mesmo alvo. Nenhuma ameaça entre A1 e A13 cobria isso.
+
+**Verificações:**
+- **Código congelado antes do vAPI:** os SHA-256 atuais dos 9 arquivos de `shadowscan/` coincidem com a tabela de `ambiente_experimental.md` §2.1 (código final da bateria do VAmPI, E27). O vAPI (E35) rodou com esse código, e nada mudou depois.
+- **Dimensão do ajuste**, medida nos dados substituídos (`runs/_substituidas/exp_vampi_principal_v3_pre_D20_D21/resultados.csv`, sem auth, código anterior a D20 e D21):
+  - 4 de 10 execuções com FP ajustados (n3_s5: 2; n6_s1, n6_s2 e n6_s5: 3 cada; 11 no total);
+  - precisão ajustada de 0,50 a 0,62, média de 0,83 (versão final: 1,00 em todas);
+  - revocação idêntica (12/15 com N = 3 e 20/30 com N = 6, as mesmas da versão final em `runs/exp_vampi_principal/resultados.csv`).
+- **Correções de regra geral:** nenhuma usa caminho, palavra ou resposta próprios do VAmPI. A exceção é o intervalo de 45 s da D19, escolhido pela validade de 60 s do token do VAmPI, que só atua com auth (o vAPI não usa auth).
+
+**Alterações:**
+1. **`protocolo_experimental.md`:** nova ameaça **A14** (interna), com as mitigações (correções gerais, uma única versão do código, vAPI como replicação com código congelado), a dimensão medida do ajuste e o efeito residual. O texto de abertura passa a "A10–A14". O Apêndice B é regenerado pelo sync.
+2. **Artigo, Seção 4.7:** "as quatro seguintes" passa a "as cinco seguintes", com um parágrafo sobre a A14.
+3. **Artigo, Seção 8.6:** frase final remete o lado negativo à A14.
+4. **Artigo, Seção 8.7:** novo item em "Ameaças que limitam o alcance", com a dimensão medida e o papel do vAPI.
+5. **Artigo, Seção 9, objetivo 5:** "treze ameaças… quatro identificadas" passa a "quatorze… cinco".
+
+Nenhuma mudança em código, dados ou resultados reportados. A dimensão do ajuste vem de dados já coletados.
+
+### E57 — 25/11 · Discussão da A1 nos dois ambientes
+
+**Pedido:** corrigir a discussão da ameaça A1 (Seção 8.7), considerando os dois ambientes.
+
+**Conferência:** procede. O item tratava só do VAmPI ("dois caminhos reais (seis endpoints)… precisão bruta 0,28–0,38") e estava sob "se manifestaram e foram medidas", sem citar o vAPI. Na Seção 7.3 e na Tabela 11, porém, a A1 também se manifesta no vAPI. Como o vAPI tem especificação derivada do roteador, a omissão sugeria que a A1 seria problema só de spec escrita à mão, e isso é falso.
+
+**Verificação em `runs/exp_*_principal/metricas_recalculadas.csv`:**
+
+| Alvo | N | Execuções | FP bruto por execução | FP ajustado | P bruta (média) | P ajustada |
+|---|---|---|---|---|---|---|
+| VAmPI | 3 | 10 | 6 em todas | 0 | 0,283 | 1,00 |
+| VAmPI | 6 | 10 | 6 em todas | 0 | 0,381 | 1,00 |
+| vAPI | 3 | 5 | 7 em todas | 0 | 0,284 | 1,00 |
+| vAPI | 6 | 5 | 7 em todas | 0 | 0,325 | 1,00 |
+
+A diferença entre FP bruto e ajustado é exatamente o número de intrínsecos de cada alvo (`specs/vampi_intrinsecos.json`: 6; `specs/vapi_intrinsecos.json`: 7) em todas as execuções.
+
+**Alterações:**
+1. **Artigo, Seção 8.7, item da A1:** reescrito para os dois alvos, com as precisões brutas de cada um. Diz que a divergência está na superfície HTTP na origem da API, e não em rotas de API, e que o vAPI mostra que a ameaça independe de a spec ser escrita à mão (D16).
+2. **`protocolo_experimental.md`, A1:** acrescentado onde ela se manifestou nos dois alvos (no mesmo formato da A2). O Apêndice B é regenerado pelo sync.
+
+Nenhuma mudança em código, dados ou números.
+
+### E58 — 25/11 · Considerações finais: "APIs reais" → "aplicações de referência"
+
+**Pedido:** substituir "APIs reais" por "aplicações de referência" na conclusão.
+
+**Conferência:** procede. Na contribuição 1 da Seção 9 constava que o método "produz, a partir de APIs reais, um conjunto de referência conhecido". Os dois alvos são aplicações deliberadamente vulneráveis e didáticas (A5), e a Seção 8.8 nega expressamente afirmações sobre APIs reais. A frase prometia mais do que foi demonstrado. Ficou "a partir de aplicações de referência", coerente com o título da Seção 6.1 ("Ambientes de referência").
+
+**Outras ocorrências conferidas e mantidas:**
+- **Seção 1:** "o conjunto verdadeiro de shadow endpoints de uma API real é desconhecido";
+- **Seção 8.4 e A13:** "em uma API real, são independentes";
+- **Seção 8.8:** "não sustentam afirmações sobre a prevalência… em APIs reais".
+
+Nas três, "API real" designa justamente o que *não* foi testado (API em produção, em contraste com a degradação controlada), e o uso está correto.
+
+Nenhuma mudança em código, dados ou números.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
