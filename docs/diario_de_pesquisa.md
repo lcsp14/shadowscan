@@ -1100,6 +1100,27 @@ Nas três, "API real" designa justamente o que *não* foi testado (API em produ�
 
 Nenhuma mudança em código, dados ou números.
 
+### E59 — 25/11 · Commit da versão final no GitHub (tag `v1.0-tcc`)
+
+**Pedido:** identificar o commit do GitHub que corresponde à versão final do trabalho.
+
+**Conferência:** procede. A Seção 6.5 citava só o URL do repositório, e `main` continua recebendo commits (E52–E58). Sem um commit fixo, quem clonar depois da defesa não tem garantia de ver a versão que acompanha o artigo.
+
+**Defeitos encontrados no Apêndice D ao conferir os hashes do commit contra `ambiente_experimental.md` §2.1:**
+1. **`run_experiments.py` com hash desatualizado.** A tabela trazia `75E8D7EEC1D091EB`, gravado em E27. O arquivo mudou em 17/11 às 13:56 (opção `--retomar`, E33), já durante a bateria do vAPI. A versão final, que é a publicada, tem `694B780D896B0C2C` na cópia de trabalho. A mudança não altera a medição, e a nota ¹ agora a registra.
+2. **Fim de linha.** `__main__.py` e `run_experiments.py` estão com CRLF na cópia de trabalho (Windows, `core.autocrlf=true`), e o Git os guarda com LF. Em um clone, os hashes são `57E7883E75FAA620` e `FA55E47BCC969365`. O conteúdo é idêntico após normalizar o fim de linha (conferido byte a byte). A nova nota ³ registra isso.
+
+Os outros 9 arquivos da tabela têm o mesmo hash na tabela, no disco e no commit.
+
+**Verificações:** 19/19 testes OK (`python -m unittest discover tests`).
+
+**Alterações:**
+- **`ambiente_experimental.md` §2.1:** notas ¹ (`--retomar`) e ³ (CRLF/LF).
+- **Artigo, Seção 6.5:** passa a citar o hash completo do commit e a tag `v1.0-tcc`, com a observação de que o código da ferramenta nesse commit é o mesmo que gerou as execuções.
+- **Tag anotada `v1.0-tcc`** criada no commit que contém esta entrada e publicada no GitHub. O hash fica registrado no artigo (Seção 6.5) e na tag, e não aqui, porque esta entrada faz parte do próprio commit.
+
+Nenhuma mudança em código, dados ou números.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |

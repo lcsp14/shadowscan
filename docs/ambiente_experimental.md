@@ -45,17 +45,27 @@ D18–D21). Versões anteriores e o motivo da substituição estão no diário (
 | shadowscan/classify.py | D4FF0E35972E59DB |
 | shadowscan/metrics.py | BE242347BCC18C79 |
 | shadowscan/ground_truth.py | FB2CF49B5D7EFF63 |
-| shadowscan/\_\_main\_\_.py | **E1236C2BE3210D09** |
-| experiments/run_experiments.py | 75E8D7EEC1D091EB ¹ |
+| shadowscan/\_\_main\_\_.py | **E1236C2BE3210D09** ³ |
+| experiments/run_experiments.py | 75E8D7EEC1D091EB ¹ ³ |
 | experiments/analyze.py | 3CA868A46A551B75 ² |
 | experiments/laravel_routes_to_openapi.py | CFB03B3FEF4FD847 |
 | tests/test_core.py | 19 testes (após D21) |
 
 ¹ `run_experiments.py` ganhou o alvo `vapi` durante a bateria do VAmPI. A mudança só
 acrescenta uma entrada de configuração e a regra "vAPI sem autenticação". Não altera nenhum
-caminho de código executado para o VAmPI.
+caminho de código executado para o VAmPI. Depois, durante a bateria do vAPI (17/11, 13:56;
+diário E33), ganhou a opção `--retomar`, que pula execuções já concluídas e refaz as
+interrompidas, sem alterar a medição. O hash da tabela é anterior a essa mudança. A versão
+final, usada na retomada do vAPI e publicada no repositório, tem hash 694B780D896B0C2C
+(cópia de trabalho com CRLF; FA55E47BCC969365 com LF, ver nota ³).
 
 ² `analyze.py` só lê resultados já gravados. Mudanças nele não afetam dados coletados.
+
+³ Hashes calculados sobre a cópia de trabalho no Windows. Esses dois arquivos foram salvos com
+fim de linha CRLF, e o repositório Git os armazena com LF. Em um clone, os hashes são
+57E7883E75FAA620 (`__main__.py`) e FA55E47BCC969365 (`run_experiments.py`), com conteúdo
+idêntico após a normalização do fim de linha. Os demais arquivos da tabela usam LF e têm o
+mesmo hash no disco e no repositório (versão `v1.0-tcc`).
 
 ### 2.2 Parâmetros padrão da ferramenta nos experimentos
 
