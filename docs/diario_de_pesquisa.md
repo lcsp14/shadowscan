@@ -1232,6 +1232,20 @@ Nenhuma mudança em código de medição, dados ou números.
 
 **Tag.** Com autorização do autor, a tag `v1.0-tcc` foi movida para o commit que contém esta entrada, porque os arquivos-fonte dos Apêndices B e E mudaram. O hash na Seção 6.5 foi atualizado. Como em E59 e E61, o hash não é registrado aqui. Código e dados de `runs/` não mudaram.
 
+### E63 — 26/11, 14:00 · Correções de forma apontadas por avaliação independente
+
+Um avaliador independente (subagente que recebeu só o PDF da monografia e o Roteiro de Avaliação) estimou a parte escrita em 7,1 de 8,0, a mesma estimativa da avaliação anterior. Cada apontamento foi conferido no texto antes de ser aceito.
+
+**Aplicado:**
+- Referência **MENESES, FURUTA e SHIPMAN (2012)** incluída na lista: o item era citado no Apêndice E sem constar das Referências. Só os metadados confirmados em `literatura/bloco_soft404_inventario.md` (autores, título, evento, editora, p. 197-208, DOI); local do evento e volume da série ficaram de fora por não terem sido conferidos em registro bibliográfico. No Apêndice E (`protocolo_busca.md`), "NIST SP 800-228" passou a ser citado como Chandramouli e Butcher (2025).
+- Convenção D## (Apêndice A) e A## (Apêndice B) explicada no último parágrafo da Introdução, porque os códigos aparecem a partir da Seção 2.
+- Ressalva do PIN retirada da Seção 8.1 (QP4) e do item 3 das contribuições (Seção 9). Permanece no Resumo, no Abstract, na Seção 7.1, na Seção 8.2 e no objetivo 1 das Considerações finais.
+- Conversor (`md2docx_monografia.js`): em tabela mais larga que a mancha, colunas estreitas mantêm a largura mínima e só as largas encolhem. Corrige a quebra "A1/0" na coluna Id da tabela de ameaças (Apêndice B).
+
+**Não aceito:** "p. 748758" (o hífen existe; some só na extração de texto do PDF); Ratcliff e Obershelp sem referência (a menção já é atribuída à documentação do `difflib`, PYTHON SOFTWARE FOUNDATION, 2026); folha de aprovação sem banca e ficha catalográfica (o modelo do iCEV não as traz).
+
+Monografia regenerada: 75 páginas, Introdução na p. 8. Nenhuma mudança em código de medição, dados ou números.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
