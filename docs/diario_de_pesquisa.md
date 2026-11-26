@@ -1246,6 +1246,10 @@ Um avaliador independente (subagente que recebeu só o PDF da monografia e o Rot
 
 Monografia regenerada: 75 páginas, Introdução na p. 8. Nenhuma mudança em código de medição, dados ou números.
 
+### E64 — 26/11, 14:03 · Citações no texto com sobrenome em maiúsculas e minúsculas
+
+A pedido do autor, as citações autor-data no corpo e nos apêndices passaram da forma em caixa alta (SILVA, 2026) para a forma com só a inicial maiúscula (Silva, 2026), como manda a NBR 10520:2023. Foram 65 trocas dentro de parênteses com ano. Siglas e nomes próprios em sigla ficaram como estão (OWASP Foundation, ZAP, APICARV, OpenAPI Initiative, ProjectDiscovery). A lista de Referências mantém o sobrenome em caixa alta, conforme a NBR 6023. Monografia regenerada: 75 páginas. Nenhuma mudança em código, dados ou números.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
