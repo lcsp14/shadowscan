@@ -1250,6 +1250,8 @@ Monografia regenerada: 75 páginas, Introdução na p. 8. Nenhuma mudança em c�
 
 A pedido do autor, as citações autor-data no corpo e nos apêndices passaram da forma em caixa alta (SILVA, 2026) para a forma com só a inicial maiúscula (Silva, 2026), como manda a NBR 10520:2023. Foram 65 trocas dentro de parênteses com ano. Siglas e nomes próprios em sigla ficaram como estão (OWASP Foundation, ZAP, APICARV, OpenAPI Initiative, ProjectDiscovery). A lista de Referências mantém o sobrenome em caixa alta, conforme a NBR 6023. Monografia regenerada: 75 páginas. Nenhuma mudança em código, dados ou números.
 
+**Tag.** Com autorização do autor, a tag `v1.0-tcc` foi movida para o commit que contém esta entrada, que inclui as mudanças de E63 (Apêndice E) e E64. O hash na Seção 6.5 foi atualizado. Como em E59, E61 e E62, o hash não é registrado aqui. Código e dados de `runs/` não mudaram.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
