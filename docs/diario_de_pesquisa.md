@@ -1252,6 +1252,30 @@ A pedido do autor, as citações autor-data no corpo e nos apêndices passaram d
 
 **Tag.** Com autorização do autor, a tag `v1.0-tcc` foi movida para o commit que contém esta entrada, que inclui as mudanças de E63 (Apêndice E) e E64. O hash na Seção 6.5 foi atualizado. Como em E59, E61 e E62, o hash não é registrado aqui. Código e dados de `runs/` não mudaram.
 
+### E65 — 27/11, 15:19 · Correções da professora na monografia revisada
+
+A professora devolveu a monografia (PDF "monografia- Lucas - Revisado") com 8 comentários digitados e marcas manuscritas nas páginas 8 a 52. As marcas foram transcritas página a página e cada uma conferida no texto-fonte antes de aplicada.
+
+**Forma (no conversor `md2docx_monografia.js`):** sem ponto depois do indicativo numérico das seções ("2.2 OWASP", "1 INTRODUÇÃO"), conforme a NBR 6024; listas com marcador ou número passaram a alíneas a), b), c).
+
+**Texto (cerca de 50 trechos):**
+- travessões de intercalação marcados trocados por vírgulas;
+- siglas HTTP, URI, JSON e YAML com o nome por extenso na primeira ocorrência;
+- conectivos e sujeitos explícitos acrescentados ("Convém notar que", "Já o", "Além disso", "Em suma", "Essa circularidade", "Os autores relatam", "Contudo");
+- tempo verbal ("requisitaram", "compararam");
+- datas por extenso na Seção 3.1 ("18 de novembro de 2026, à 1h46");
+- seis parágrafos divididos onde ela indicou;
+- os dois resultados do APICARV passaram de lista a parágrafos;
+- a nota da Tabela 2 passou a "Nota:";
+- "tipo metodo" passou a "tipo método";
+- a frase "A precisão reportada é a ajustada." foi retirada da Seção 8.1;
+- as definições de precisão e revocação foram reescritas com a redação sugerida por ela;
+- o itálico de health check, testbed e gateways foi retirado, conforme a nota 1; "potential inconsistency" passou a itálico, por ser citação em língua estrangeira.
+
+**Rótulo "Comparação.":** ela perguntou se era um marcador. O rótulo em negrito foi substituído por conectivo integrado ao texto ("Em comparação com esses trabalhos", "Em comparação com o APICARV", "Em comparação, Amoruso et al.").
+
+Monografia regenerada: 75 páginas, Introdução na p. 8. Nenhuma mudança em código, dados ou números.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
