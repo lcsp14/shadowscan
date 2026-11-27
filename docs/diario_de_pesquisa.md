@@ -1272,7 +1272,7 @@ A professora devolveu a monografia (PDF "monografia- Lucas - Revisado") com 8 co
 - as definições de precisão e revocação foram reescritas com a redação sugerida por ela;
 - o itálico de health check, testbed e gateways foi retirado, conforme a nota 1; "potential inconsistency" passou a itálico, por ser citação em língua estrangeira.
 
-**Rótulo "Comparação.":** ela perguntou se era um marcador. O rótulo em negrito foi substituído por conectivo integrado ao texto ("Em comparação com esses trabalhos", "Em comparação com o APICARV", "Em comparação, Amoruso et al.").
+**Rótulo "Comparação.":** ela perguntou se era um marcador textual. Depois de esclarecida a função (abre o trecho em que o trabalho se compara com os autores apresentados), disse ao autor que o rótulo pode ficar como estava; foi mantido.
 
 Monografia regenerada: 75 páginas, Introdução na p. 8. Nenhuma mudança em código, dados ou números.
 
