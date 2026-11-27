@@ -1276,6 +1276,16 @@ A professora devolveu a monografia (PDF "monografia- Lucas - Revisado") com 8 co
 
 Monografia regenerada: 75 páginas, Introdução na p. 8. Nenhuma mudança em código, dados ou números.
 
+### E66 — 27/11, 15:33 · Declaração de IA ajustada; anexos com as declarações assinadas
+
+**Declaração de uso de IA.** Por decisão do autor, "como apoio à revisão da clareza e da coesão textual" passou a "como apoio à redação e à revisão do texto", para descrever com exatidão o uso das ferramentas na redação. O restante da declaração não mudou.
+
+**Anexos.** O Manual do TCC exige anexar ao trabalho o comprovante da revisão ortográfica e gramatical. Entraram, digitalizados a partir dos PDFs assinados digitalmente pelo gov.br:
+- ANEXO A – Declaração de revisão gramatical (revisora formada em Letras, 26/11);
+- ANEXO B – Autorização do orientador para defesa (27/11).
+
+O conversor acrescenta os anexos depois dos apêndices, quando as imagens existem em `docs/artigo/figuras/`. Eles ficam fora do `.md` porque a região dos apêndices é sobrescrita pelo `sincronizar_apendices`. Monografia regenerada: 77 páginas. Nenhuma mudança em código, dados ou números.
+
 ## Decisões em aberto
 
 | # | Questão | Opções | Recomendação |
